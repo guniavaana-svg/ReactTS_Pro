@@ -1,0 +1,39 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "path": "/",
+      "name": "Home"
+    },
+    {
+      "id": 2,
+      "path": "/benefits",
+      "name": "Your Benefits"
+    },
+    {
+      "id": 3,
+      "path": "/tours",
+      "name": "Popular Tours"
+    },
+    {
+      "id": 4,
+      "path": "/stories",
+      "name": "Stories"
+    },
+    {
+      "id": 5,
+      "path": "/book",
+      "name": "Book Now"
+    },
+    {
+      "id": 6,
+      "path": "/about",
+      "name": "About Us"
+    },
+    {
+      "id": 7,
+      "path": "/contact",
+      "name": "Contact Us"
+    }
+  ]
+}
