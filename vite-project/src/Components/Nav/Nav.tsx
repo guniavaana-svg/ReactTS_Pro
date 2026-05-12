@@ -15,7 +15,7 @@ function Nav (){
                 const response=await fetch(`${API_URL}/menu`)
                 const menuData:Menu[]=await response.json()
                 setMenu(menuData);
-                console.log(menuData, response)
+                console.log(menuData)
             }catch(e){
                 console.error(e);
             }
@@ -26,7 +26,7 @@ function Nav (){
     return(
         <nav>
             {menuData.map(item=>(
-               <NavLink key={item.id} to={item.path}>{item.name}</NavLink>
+               <NavLink key={item.id} to={item.path} end>{item.name}</NavLink>
             ))}
         </nav>
     )

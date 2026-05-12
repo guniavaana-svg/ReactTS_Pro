@@ -35,5 +35,51 @@
       "path": "/contact",
       "name": "Contact Us"
     }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "You're going to fall in love with nature",
+      "mainImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "images": [
+        "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+      ],
+      "description": "Nature has an incredible way of calming the mind and restoring balance in life.",
+      "subtitles": [
+        {
+          "title": "Why nature improves your mental health",
+          "text": "Spending time in nature reduces stress, improves focus, and helps your mind reset."
+        },
+        {
+          "title": "How to connect with nature daily",
+          "text": "Simple habits like walking in a park or watching the sunset can help you reconnect with nature."
+        }
+      ],
+      "content": "Exploring nature is more than just a hobby—it transforms your mindset and brings peace into your life."
+    },
+    {
+      "id": 2,
+      "title": "Live adventures like you never have before",
+      "mainImage": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800",
+      "images": [
+        "https://images.unsplash.com/photo-1527631746610-bca00a040d60",
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800"
+      ],
+      "description": "Adventure is about stepping beyond your comfort zone and embracing the unknown.",
+      "subtitles": [
+        {
+          "title": "The power of new experiences",
+          "text": "Trying new things helps you grow and builds confidence."
+        },
+        {
+          "title": "Why travel changes your life",
+          "text": "Travel exposes you to new cultures and perspectives."
+        }
+      ],
+      "content": "Living an adventurous life means saying yes to challenges and exploring beyond your limits."
+    }
   ]
 }
