@@ -36,50 +36,166 @@
       "name": "Contact Us"
     }
   ],
-  "articles": [
-    {
-      "id": 1,
-      "title": "You're going to fall in love with nature",
-      "mainImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-      "images": [
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
-      ],
-      "description": "Nature has an incredible way of calming the mind and restoring balance in life.",
-      "subtitles": [
-        {
-          "title": "Why nature improves your mental health",
-          "text": "Spending time in nature reduces stress, improves focus, and helps your mind reset."
-        },
-        {
-          "title": "How to connect with nature daily",
-          "text": "Simple habits like walking in a park or watching the sunset can help you reconnect with nature."
-        }
-      ],
-      "content": "Exploring nature is more than just a hobby—it transforms your mindset and brings peace into your life."
-    },
-    {
-      "id": 2,
-      "title": "Live adventures like you never have before",
-      "mainImage": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800",
-      "images": [
-        "https://images.unsplash.com/photo-1527631746610-bca00a040d60",
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800"
-      ],
-      "description": "Adventure is about stepping beyond your comfort zone and embracing the unknown.",
-      "subtitles": [
-        {
-          "title": "The power of new experiences",
-          "text": "Trying new things helps you grow and builds confidence."
-        },
-        {
-          "title": "Why travel changes your life",
-          "text": "Travel exposes you to new cultures and perspectives."
-        }
-      ],
-      "content": "Living an adventurous life means saying yes to challenges and exploring beyond your limits."
-    }
-  ]
+  "articles":[
+  {
+    "id": 1,
+    "category_id": 1,
+    "title": "You're going to fall in love with nature",
+    "mainImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    "images": [
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+    ],
+    "description": "Nature has an incredible way of calming the mind and restoring balance in life.",
+    "subtitles": [
+      {
+        "title": "Why nature improves your mental health",
+        "text": "Spending time in nature reduces stress, improves focus, and helps your mind reset."
+      },
+      {
+        "title": "How to connect with nature daily",
+        "text": "Simple habits like walking in a park or watching the sunset can help you reconnect with nature."
+      }
+    ],
+    "content": "Exploring nature is more than just a hobby—it transforms your mindset and brings peace into your life."
+  },
+  {
+    "id": 2,
+    "category_id": 2,
+    "title": "Live adventures like you never have before",
+    "mainImage": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800",
+    "images": [
+      "https://images.unsplash.com/photo-1527631746610-bca00a040d60",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800"
+    ],
+    "description": "Adventure is about stepping beyond your comfort zone and embracing the unknown.",
+    "subtitles": [
+      {
+        "title": "The power of new experiences",
+        "text": "Trying new things helps you grow and builds confidence."
+      },
+      {
+        "title": "Why travel changes your life",
+        "text": "Travel exposes you to new cultures and perspectives."
+      }
+    ],
+    "content": "Living an adventurous life means saying yes to challenges and exploring beyond your limits."
+  },
+  {
+    "id": 3,
+    "category_id": 3,
+    "title": "Discover the beauty of mountain escapes",
+    "mainImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b"
+    ],
+    "description": "Mountains offer breathtaking views, fresh air, and unforgettable adventures.",
+    "subtitles": [
+      {
+        "title": "Why mountain trips are refreshing",
+        "text": "The peaceful atmosphere of the mountains helps you recharge mentally and physically."
+      },
+      {
+        "title": "Best activities to try in the mountains",
+        "text": "Hiking, camping, and photography are perfect ways to enjoy mountain landscapes."
+      }
+    ],
+    "content": "A mountain escape can inspire you to slow down, appreciate nature, and reconnect with yourself."
+  },
+  {
+    "id": 4,
+    "category_id": 2,
+    "title": "Experience the magic of ocean journeys",
+    "mainImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206"
+    ],
+    "description": "The ocean inspires freedom, adventure, and moments of pure relaxation.",
+    "subtitles": [
+      {
+        "title": "Why the sea calms the soul",
+        "text": "The sound of waves and the open horizon create a sense of peace and clarity."
+      },
+      {
+        "title": "Activities to enjoy by the ocean",
+        "text": "Swimming, surfing, and beach walks make every ocean trip memorable."
+      }
+    ],
+    "content": "Ocean journeys remind us how vast and beautiful the world truly is."
+  },
+  {
+    "id": 5,
+    "category_id": 4,
+    "title": "Explore cities full of culture and life",
+    "mainImage": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df",
+    "images": [
+      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156",
+      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000"
+    ],
+    "description": "Cities are vibrant places where culture, history, and modern life come together.",
+    "subtitles": [
+      {
+        "title": "What makes cities exciting",
+        "text": "Every city has its own energy, traditions, and hidden gems to explore."
+      },
+      {
+        "title": "How urban travel broadens your perspective",
+        "text": "Meeting new people and experiencing different lifestyles helps you grow."
+      }
+    ],
+    "content": "Exploring cities allows you to experience diversity, creativity, and endless inspiration."
+  },
+  {
+    "id": 6,
+    "category_id": 1,
+    "title": "Reconnect with yourself through peaceful forests",
+    "mainImage": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+    "images": [
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1",
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7"
+    ],
+    "description": "Forests provide a quiet escape from busy daily life and help restore inner peace.",
+    "subtitles": [
+      {
+        "title": "The healing power of forests",
+        "text": "Being surrounded by trees can reduce anxiety and improve overall well-being."
+      },
+      {
+        "title": "Ways to enjoy forest adventures",
+        "text": "Nature walks, meditation, and camping are wonderful forest experiences."
+      }
+    ],
+    "content": "Peaceful forests remind us to slow down, breathe deeply, and enjoy the beauty around us."
+  }
+],
+"articleCategory":[
+  {
+    "id": 1,
+    "name": "Nature & Wellness",
+    "slug": "nature-wellness"
+  },
+  {
+    "id": 2,
+    "name": "Adventure & Travel",
+    "slug": "adventure-travel"
+  },
+  {
+    "id": 3,
+    "name": "Mountains & Escapes",
+    "slug": "mountains-escapes"
+  },
+  {
+    "id": 4,
+    "name": "Urban & Culture",
+    "slug": "urban-culture"
+  }
+]
 }

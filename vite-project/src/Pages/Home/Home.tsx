@@ -2,6 +2,9 @@ import "./Home.css";
 import { API_URL } from "../../../config";
 import { useEffect, useState } from "react";
 import TwoCol from "../../Components/TwoColLayout/TwoColLayout";
+import Loader from "../../Components/Loader/Loader";
+import BtnCategory from "../../Components/BtnCategory/BtnCategory";
+import { useSearchParams } from "react-router";
 interface subtitlesType{
     title:string;
     text:string;
@@ -15,20 +18,43 @@ interface articleDataType{
     subtitles:subtitlesType[];
     content:string;
 }
+interface CategoryDataType{
+    id:number;
+    name:string;
+    slug:string;
+}
 function Home(){
-     const [articleData, setArticleData]=useState<articleDataType[]>([]);
+   
+    const [loading, setLoader] = useState<boolean>(true);
+    const [articleData, setArticleData]=useState<articleDataType[]>([]);
        useEffect(()=>{
-            async function getarticleData() {
-           const response=await fetch(`${API_URL}/articles`)
+            async function getArticleData() {
+           const response=await fetch(`${API_URL}/articles?category_id=1`)
            const Data:articleDataType[]=await response.json()
            setArticleData(Data);
-           console.log(articleData)
+           console.log(Data);
        }
-       getarticleData()
+       getArticleData()
+       },[])
+    //    /****************category************ */
+    const [catogoryData, setCatogoryData]=useState<CategoryDataType[]>([]);
+       useEffect(()=>{
+            async function getCatogoryData() {
+           const response=await fetch(`${API_URL}/articleCategory`)
+           const data:CategoryDataType[]=await response.json()
+           setCatogoryData(data);
+           console.log(data);
+       }
+       getCatogoryData()
        },[])
     return(<>
-        <h2>this is home page</h2>
-       <div className="flex flex-row justify-center items-center gap-8">
+        <div className="flex gap-4 mb-5 items-center justify-center mt-5">
+            {catogoryData.map(item=>(
+                <BtnCategory key={item.id} id={item.id} name={item.name} slug=""/>
+            ))}
+        </div>
+        <div className="flex justify-content-between flex-wrap relative">
+        { loading &&<Loader/>}
         {articleData.map(item => (
             <TwoCol
             key={item.id}
