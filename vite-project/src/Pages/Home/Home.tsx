@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import TwoCol from "../../Components/TwoColLayout/TwoColLayout";
 import Loader from "../../Components/Loader/Loader";
 import BtnCategory from "../../Components/BtnCategory/BtnCategory";
-import { useSearchParams } from "react-router";
+import { useSearchParams , useParams} from "react-router";
 
 interface subtitlesType {
   title: string;
@@ -28,6 +28,7 @@ interface CategoryDataType {
 }
 
 function Home() {
+ 
   const [loading, setLoader] = useState<boolean>(true);
 
   const [articleData, setArticleData] = useState<articleDataType[]>([]);
@@ -123,6 +124,7 @@ function Home() {
           articleData.map((item) => (
             <TwoCol
               key={item.id}
+              id={`tours/${item.id}`}
               className="transform scale-90 transition-all duration-200 hover:scale-100 hover:shadow-[0_2.5rem_4rem_rgba(0,0,0,0.4)] hover:outline hover:outline-[0.5rem] hover:outline-[#28b485]"
               title={item.title}
               description={item.description}

@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home.tsx";
 import Stories from "../Pages/Stories/Stories.tsx";
 import Tours from "../Pages/Tours/Tours.tsx";
 import Layout from "../layouts/Layout/Layout.tsx";
+import ToursDet from "../Pages/Tours/ToursDet.tsx";
 
 function NavRoutes(){
     return(
@@ -14,7 +15,8 @@ function NavRoutes(){
             <Route path="/" element={<Layout/>}>
                 <Route index element={<Home/>}/>
                 <Route path="benefits" element={<Benefit/>}/>
-                <Route path="tours" element={<Tours/>}/>
+                <Route path="tours" element={<Tours/>} />
+                <Route path="tours/:id" element={<ToursDet/>}/>
                 <Route path="stories" element={<Stories/>}/>
                 <Route path="book" element={<Book/>}/>
                 <Route path="about" element={<About/>}/>

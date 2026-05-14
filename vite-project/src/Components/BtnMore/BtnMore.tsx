@@ -1,11 +1,13 @@
+import { NavLink } from "react-router";
 import "./BtnMore.css";
 interface BtnMorePropsType{
-    btnText:string;
+    btnText?:string;
+    path?:string;
 }
 function BtnMore(props:BtnMorePropsType){
-    const {btnText}=props;
+    const {btnText,path}=props;
     return(<>
-    <a href="#section-tours" className="BtnMore">{btnText} &rarr;</a>
+    <NavLink to={path} className="BtnMore">{btnText} &rarr;</NavLink>
     {/* a Sesacvlelia LInkiT konkretulze ro gadavides */}
     </>)
 }

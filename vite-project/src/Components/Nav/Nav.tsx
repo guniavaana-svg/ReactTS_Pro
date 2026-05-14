@@ -15,7 +15,6 @@ function Nav (){
                 const response=await fetch(`${API_URL}/menu`)
                 const menuData:Menu[]=await response.json()
                 setMenu(menuData);
-                console.log(menuData)
             }catch(e){
                 console.error(e);
             }
