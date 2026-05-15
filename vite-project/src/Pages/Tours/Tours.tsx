@@ -10,26 +10,26 @@ import type  { ArticleDataType, CategoryDataType } from "./dataType";
 
 function Tours() {
   const [loading, setLoader] = useState<boolean>(true);
-  const [articleData, setArticleData] = useState<ArticleDataType[]>([]);
+  const [articlesData, setArticlesData] = useState<ArticleDataType[]>([]);
   const [categoryData, setCatogoryData] = useState<CategoryDataType[]>([]);
   const [searchParams, setSearchParams] = useSearchParams();  // search params
   const categoryId = searchParams.get("category_id");  // category id URL-დან
   /**************** articles ****************/
   useEffect(() => {
-    async function getArticleData() {
+    async function getArticlesData() {
       setLoader(true);
       // თუ category არ არის -> ყველა article
       const url = categoryId
         ? `${API_URL}/articles?category_id=${categoryId}`
         : `${API_URL}/articles`;
       const response = await fetch(url);
-      const data: articleDataType[] = await response.json();
+      const data: ArticleDataType[] = await response.json();
       setTimeout(() => {
-        setArticleData(data);
+        setArticlesData(data);
         setLoader(false);
       }, 1000);
     }
-    getArticleData();
+    getArticlesData();
   }, [categoryId]);
   /**************** category ****************/
   useEffect(() => {
@@ -80,7 +80,7 @@ function Tours() {
       <div className="flex justify-content-between flex-wrap relative min-h-[30vh]">
         {loading && <Loader />}
         {!loading &&
-          articleData.map((item) => (
+          articlesData.map((item) => (
             <TwoCol
                 key={item.id}
                 id={`${item.id}`}

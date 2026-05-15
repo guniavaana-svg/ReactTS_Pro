@@ -7,7 +7,7 @@ function Layout (){
     // console.log("Current path:", location.pathname);
     return(<>
         <Header/>
-        <main>
+        <main className="max-w-[1400px] mx-auto">
             <Outlet/>
         </main>
         <Footer/>

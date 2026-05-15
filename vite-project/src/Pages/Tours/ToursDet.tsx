@@ -3,11 +3,10 @@ import { API_URL } from "../../../config";
 import { useEffect, useState } from "react";
 import { useParams} from "react-router";
 import type  { ArticleDataType} from "./dataType";
-import TwoCol from "../../Components/TwoColLayout/TwoColLayout";
+import CardDetail from "../../Components/CardDetail/CardDetail";
 
 function ToursDet() {
-  const [articleData, setArticleData] = useState<ArticleDataType | null>(null);
-  /**************** articles ****************/
+  const [articleData, setArticleData] = useState<ArticleDataType>();
 const{id}=useParams();
   useEffect(() => {
     async function getArticleData() {
@@ -21,7 +20,7 @@ const{id}=useParams();
  
   return (
     <>
-    <TwoCol title={articleData?.title} description={articleData?.description} img={articleData?.mainImage}/>
+    {<CardDetail title={articleData?.title} description={articleData?.description} images={articleData?.images} subtitles={articleData?.subtitles} mainImage={articleData?.mainImage} />}
     </>
   );
 }

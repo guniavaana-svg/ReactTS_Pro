@@ -92,34 +92,17 @@ function Home() {
   return (
     <>
       <div className="flex gap-4 mb-5 items-center justify-center mt-5 flex-wrap">
-        <div
-          onClick={handleAllArticles}
-        >
-          <BtnCategory
-            id={0}
-            name="All"
-            slug=""
-          />
+        <div onClick={handleAllArticles}>
+          <BtnCategory id={0} name="All" slug=""/>
         </div>
-
-        {/* categories */}
         {categoryData.map((item) => (
-          <div
-            key={item.id}
-            onClick={() => handleCategoryFilter(item.id)}
-          >
-            <BtnCategory
-              id={item.id}
-              name={item.name}
-              slug={item.slug}
-            />
+          <div key={item.id} onClick={() => handleCategoryFilter(item.id)}>
+            <BtnCategory id={item.id} name={item.name} slug={item.slug}/>
           </div>
         ))}
       </div>
-
       <div className="flex justify-content-between flex-wrap relative min-h-[30vh]">
         {loading && <Loader />}
-
         {!loading &&
           articleData.map((item) => (
             <TwoCol
