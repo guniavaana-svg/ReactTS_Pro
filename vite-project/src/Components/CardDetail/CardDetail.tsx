@@ -15,8 +15,8 @@ function CardDetail(props:CardDetailPropsType){
     const{title,description,images, subtitles,mainImage}=props;
     return(
         <>
-        <div className="imagebox">
-            <img src={mainImage} alt="image" />
+        <div className="flex justify-center items-center overflow-hidden w-full">
+            <img src={mainImage} alt="image" className="object-fit-cover"/>
         </div>
         <div className="titlebox">
             <h1>{title}</h1>
