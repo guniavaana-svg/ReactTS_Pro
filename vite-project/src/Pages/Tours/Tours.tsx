@@ -53,14 +53,11 @@ function Tours() {
   }
   /******************************form************************ */
   const Val=useRef<HTMLInputElement>(null);
-  const[value,setValue]=useState<string>()
-  let searchValue="";
+  const[searchValue, setSearchValue]=useState<string>("")
   function go(){ 
-    searchValue=Val.current?.value;
-    console.log(searchValue)
-  }
+        setSearchValue(Val.current?.value ?? "");
+      }
   let filteredData=articlesData.filter( item => (item.title.toLowerCase().includes(searchValue.toLowerCase())));
-  console.log(filteredData)
   return (
     <>
       <div className="flex gap-4 mb-5 items-center justify-center mt-5 flex-wrap">

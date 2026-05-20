@@ -8,6 +8,8 @@ import Stories from "../Pages/Stories/Stories.tsx";
 import Tours from "../Pages/Tours/Tours.tsx";
 import Layout from "../layouts/Layout/Layout.tsx";
 import ToursDet from "../Pages/Tours/ToursDet.tsx";
+import Registration from "../Pages/Registration/Registration.tsx"
+import LogIn from "../Pages/LogIn/LogIn.tsx";
 
 function NavRoutes(){
     return(
@@ -21,6 +23,8 @@ function NavRoutes(){
                 <Route path="book" element={<Book/>}/>
                 <Route path="about" element={<About/>}/>
                 <Route path="contact" element={<Contact/>}/>
+                <Route path="registration" element={<Registration/>}/>
+                <Route path="login" element={<LogIn/>}/>
             </Route>
             <Route path="*" element={<h1>404error</h1>}/>
         </Routes>
