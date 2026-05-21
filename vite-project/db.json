@@ -9,8 +9,14 @@
       "password": "123",
       "id": 1
     }
-   
   ],
+  "UserRegistrationErrors":{
+    "firstame": "you mast enter your firstname, dont use numbers",
+    "lastname": "you mast enter your lastname, dont use numbers",
+    "gender":"chose your gender",
+    "phone": "enter your phone , use only numbers",
+    "password": "enter your password"
+  },
   "menu": [
     {
       "id": 1,

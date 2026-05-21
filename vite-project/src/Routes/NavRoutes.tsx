@@ -10,6 +10,8 @@ import Layout from "../layouts/Layout/Layout.tsx";
 import ToursDet from "../Pages/Tours/ToursDet.tsx";
 import Registration from "../Pages/Registration/Registration.tsx"
 import LogIn from "../Pages/LogIn/LogIn.tsx";
+import UserPage from "../Dashboard/pages/UserPage/UserPage.tsx";
+import DashLayout from "../Dashboard/DashLayout.tsx";
 
 function NavRoutes(){
     return(
@@ -26,7 +28,13 @@ function NavRoutes(){
                 <Route path="registration" element={<Registration/>}/>
                 <Route path="login" element={<LogIn/>}/>
             </Route>
-            <Route path="*" element={<h1>404error</h1>}/>
+           
+           
+            <Route path="dashboard" element={<DashLayout />} >
+                    <Route path="user" index element={<UserPage/>}/>
+                    <Route path="*" element={<h1>404error</h1>}/>
+            </Route>
+
         </Routes>
     )
 }
