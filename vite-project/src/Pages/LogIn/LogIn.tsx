@@ -16,18 +16,18 @@ function LogIn(){
             const user=await res.json();
             if(user.length>0){
                 localStorage.setItem("isUser", "yes");
+                navigate("/dashboard/user")
             }else{
                 localStorage.setItem("isUser", "no");
             }
             console.log(user)
         }
         getUser()
-        let isUser=localStorage.getItem("isUser")
-        if(isUser==="yes"){
-            navigate("/dashboard/user")
-            localStorage.removeItem("isUser");
-            navigate("/dashboard/user")
-        }
+        // let isUser=localStorage.getItem("isUser")
+        // if(isUser==="yes"){
+        //     navigate("/dashboard/user")
+        //     // localStorage.removeItem("isUser");
+        // }
     } 
     return(
         <form onSubmit={handleLogin} className="flex flex-col">
