@@ -34,22 +34,38 @@ function Registration(){
         e.target.reset();
     }
     return(
-        <form onSubmit={handleSubmmit} className="flex flex-col">
-            <legend>Registration Form</legend>
-            <label>firstname</label>
-            <input type="text" placeholder="your firstame" name="firstame" />
-            <label>lastname</label>
-            <input type="text" placeholder="your lastname"  name="lastname" />
-            <select name="gender">
-                <option value="famale">famale</option>
-                <option value="male">male</option>
-            </select>
-            <label>mail</label>
-            <input type="email" placeholder="your mail" name="mail"/>
-            <label>phone</label>
-            <input type="number" placeholder="your phone"  name="phone"/>
-            <label>password</label>
-            <input type="text" placeholder="enter your password" name="password" />
+        <form onSubmit={handleSubmmit} className="flex flex-col gap-4 border-2 border-[green] p-5 rounded-3">
+            <legend >Registration Form</legend>
+            <div className="flex gap-4">
+                <label>firstname</label>
+                <input type="text" placeholder="your firstame" name="firstame" className="w-full"/>
+            </div>
+            <div className="flex gap-4">
+                <label>lastname</label>
+                <input type="text" placeholder="your lastname"  name="lastname" className="w-full" />
+            </div>
+            <div className="flex gap-4">
+                <label>gender</label>
+                <select name="gender" className="flex gap-4">
+                    <option value="default">default</option>
+                    <option value="famale">famale</option>
+                    <option value="male">male</option>
+                </select>
+            </div>
+            
+            <div className="flex gap-4" >
+                <label>mail</label>
+                <input type="email" placeholder="your mail" name="mail" className="w-full"/>
+            </div>
+            <div className="flex gap-4">
+                <label>phone</label>
+                <input type="number" placeholder="your phone"  name="phone" className="w-full"/>
+            </div>
+            <div className="flex gap-4">
+                <label>password</label>
+                <input type="text" placeholder="enter your password" name="password" className="w-full" />
+            </div>
+            
             <button>registration</button>
         </form>
     )
