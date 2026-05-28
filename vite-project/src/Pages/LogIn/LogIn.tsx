@@ -10,17 +10,20 @@ function LogIn(){
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
         const currentData = Object.fromEntries(formData.entries());
-        console.log(currentData);
+        // console.log(currentData);
         async function getUser(){
             const res=await fetch(`${API_URL}/users?email=${currentData.email}&password=${currentData.password}`)
             const user=await res.json();
+            console.log(user)
             if(user.length>0){
                 localStorage.setItem("isUser", "yes");
-                navigate("/dashboard/user")
+                localStorage.setItem("user", JSON.stringify(user) );
+                navigate("/desh")
             }else{
                 localStorage.setItem("isUser", "no");
+                localStorage.removeItem("user")
             }
-            console.log(user)
+            // console.log(user)
         }
         getUser()
         // let isUser=localStorage.getItem("isUser")
