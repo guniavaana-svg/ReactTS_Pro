@@ -14,6 +14,7 @@ function Registration(){
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
         const currentData = Object.fromEntries(formData.entries());
+        //  console.log(currentData)
         // ზედას ჩაშლილად ინებ ასთე:
         // const formData:FormDataType={
         //     firstame:e.currentTarget.firstame.value,
@@ -24,14 +25,23 @@ function Registration(){
         //     password:e.currentTarget.password.value,
         // }
         // console.log(formData);
-        const rec=await fetch(`${API_URL}/users/`, {
+        const res=await fetch(`${API_URL}/users?email=${currentData.email}`)
+        const isUser=await res.json();
+        // console.log(isUser)
+        if(isUser.length==0){
+             const rec=await fetch(`${API_URL}/users/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(currentData)
             })
-        const data=await rec.json()
-        console.log(data)
+            const data=await rec.json()
+            console.log(data)
+        }else{
+            console.log("user is registered and this is registered user:", isUser)
+        }
+       
         e.target.reset();
+        
     }
     return(
         <form onSubmit={handleSubmmit} className="flex flex-col gap-4 border-2 border-[green] p-5 rounded-3">
@@ -55,7 +65,7 @@ function Registration(){
             
             <div className="flex gap-4" >
                 <label>mail</label>
-                <input type="email" placeholder="your mail" name="mail" className="w-full"/>
+                <input type="email" placeholder="your mail" name="email" className="w-full"/>
             </div>
             <div className="flex gap-4">
                 <label>phone</label>
@@ -70,4 +80,5 @@ function Registration(){
         </form>
     )
 }
+
 export default Registration;

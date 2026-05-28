@@ -4,16 +4,25 @@
       "firstame": "jugg",
       "lastname": "dfjg",
       "gender": "famale",
-      "mail": "face@mail.ge",
+      "email": "face@mail.ge",
       "phone": "34623326",
       "password": "123",
       "id": 1
+    },
+    {
+      "firstame": "bob",
+      "lastname": "bobb",
+      "gender": "male",
+      "email": "bob@gmail.com",
+      "phone": "55555255",
+      "password": "123",
+      "id": 6
     }
   ],
-  "UserRegistrationErrors":{
+  "UserRegistrationErrors": {
     "firstame": "you mast enter your firstname, dont use numbers",
     "lastname": "you mast enter your lastname, dont use numbers",
-    "gender":"chose your gender",
+    "gender": "chose your gender",
     "phone": "enter your phone , use only numbers",
     "password": "enter your password"
   },
