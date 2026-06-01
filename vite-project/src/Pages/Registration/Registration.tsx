@@ -1,6 +1,10 @@
+
 import "./Registration.css";
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 import { API_URL } from "../../../config";
 import React from "react";
+
 interface FormDataType{
     firstame:string;
     lastname:string;
@@ -10,6 +14,20 @@ interface FormDataType{
     password:string
 }
 function Registration(){
+    const regExp={
+        alphaBet: /^[a-zA-Z]+$/,
+        email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    }
+    const validate=Yup.object().shape({
+        firstname:Yup.string()
+            .matches(regExp.alphaBet,"ანბანის გარდა სხვა სიმბოლოებს ვერ გამოიყენებ")
+            .min(2, "შეიყვანე ორზე მეტი სიმბოლო")
+            .max(30, "30-ზე მეტ სიმბოლოს ვერ შეიყვან"),
+        lastname:Yup.string()
+            .matches(regExp.alphaBet,"ანბანის გარდა სხვა სიმბოლოებს ვერ გამოიყენებ")
+            .min(2, "შეიყვანე ორზე მეტი სიმბოლო")
+            .max(30, "30-ზე მეტ სიმბოლოს ვერ შეიყვან"),
+    })
    async function handleSubmmit(e:React.SyntheticEvent<HTMLFormElement>){
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
@@ -44,40 +62,35 @@ function Registration(){
         
     }
     return(
-        <form onSubmit={handleSubmmit} className="flex flex-col gap-4 border-2 border-[green] p-5 rounded-3">
-            <legend >Registration Form</legend>
-            <div className="flex gap-4">
-                <label>firstname</label>
-                <input type="text" placeholder="your firstame" name="firstame" className="w-full"/>
-            </div>
-            <div className="flex gap-4">
-                <label>lastname</label>
-                <input type="text" placeholder="your lastname"  name="lastname" className="w-full" />
-            </div>
-            <div className="flex gap-4">
-                <label>gender</label>
-                <select name="gender" className="flex gap-4">
-                    <option value="default">default</option>
-                    <option value="famale">famale</option>
-                    <option value="male">male</option>
-                </select>
-            </div>
-            
-            <div className="flex gap-4" >
-                <label>mail</label>
-                <input type="email" placeholder="your mail" name="email" className="w-full"/>
-            </div>
-            <div className="flex gap-4">
-                <label>phone</label>
-                <input type="number" placeholder="your phone"  name="phone" className="w-full"/>
-            </div>
-            <div className="flex gap-4">
-                <label>password</label>
-                <input type="text" placeholder="enter your password" name="password" className="w-full" />
-            </div>
-            
-            <button>registration</button>
-        </form>
+        <Formik>
+            <form onSubmit={handleSubmmit}>
+                <div>
+                    <label htmlFor="">სახელი</label>
+                    <Field name="firstname"/>
+                </div>
+                <div>
+                    <label htmlFor="">გვარი</label>
+                    <Field name="lastname"/>
+                </div>
+                <div>
+                    <label htmlFor="">მეილი</label>
+                    <Field name="email"/>
+                </div>
+                <div>
+                    <label htmlFor="">ტელეფონი</label>
+                    <Field name="phone"/>
+                </div>
+                <div>
+                    <label htmlFor="">პაროლი</label>
+                    <Field name="password"/>
+                </div>
+                <div>
+                    <label htmlFor="">გაიმეორე პაროლი</label>
+                    <Field name="confirmPassword"/>
+                </div>
+                <button type="submit">რეგისტრაცია</button>
+            </form>
+        </Formik>
     )
 }
 
