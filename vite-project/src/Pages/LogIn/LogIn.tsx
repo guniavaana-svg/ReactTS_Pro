@@ -17,7 +17,7 @@ function LogIn(){
             console.log(user)
             if(user.length>0){
                 localStorage.setItem("isUser", "yes");
-                localStorage.setItem("user", JSON.stringify(user) );
+                localStorage.setItem("user", JSON.stringify(user));
                 navigate("/desh")
             }else{
                 localStorage.setItem("isUser", "no");
