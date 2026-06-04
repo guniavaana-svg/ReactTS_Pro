@@ -34,12 +34,12 @@ function LogIn(){
     } 
     return(
         <form onSubmit={handleLogin} className="flex flex-col">
-            <legend>log in</legend>
-            <label>email</label>
-            <input type="text" placeholder="enter your email" name="email"/>
-            <label>password</label>
-            <input type="text" placeholder="enter your password" name="password"/>
-            <button>enter</button>
+            <legend className="text-3xl font-mtavruli text-[#3454b4] text-center mb-5">შესვლა</legend>
+            <label >მეილი</label>
+            <input  className="input" type="text" placeholder="შეიყვანე მეილი" name="email"/>
+            <label >პაროლი</label>
+            <input  className="input" type="text" placeholder="შეიყვანე პაროლი" name="password"/>
+            <button className="w-full bg-[#3454b4] hover:bg-[#2e4a9e] hover:text-[#d9e1f9] text-[#ecf0fc] font-semibold tracking-[2px] py-2 rounded-lg my-5">შესვლა</button>
         </form>
     )
 }

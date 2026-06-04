@@ -17,6 +17,15 @@
       "phone": "55555255",
       "password": "123",
       "id": 6
+    },
+    {
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "phone": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": 7
     }
   ],
   "UserRegistrationErrors": {
@@ -30,37 +39,42 @@
     {
       "id": 1,
       "path": "/",
-      "name": "Home"
+      "name": "მთავარი გვერდი"
     },
     {
       "id": 2,
-      "path": "/benefits",
-      "name": "Your Benefits"
+      "path": "papier",
+      "name": "ქაღალდი"
     },
     {
       "id": 3,
-      "path": "/tours",
-      "name": "Popular Tours"
+      "path": "Stationery",
+      "name": "საკანცელარიო ნივთები"
     },
     {
       "id": 4,
-      "path": "/stories",
-      "name": "Stories"
+      "path": "Notebooks & Diaries",
+      "name": "რვეულები და დღიურები"
     },
     {
       "id": 5,
-      "path": "/book",
-      "name": "Book Now"
+      "path": "Art Supplies",
+      "name": "სამხატვრო მასალები"
     },
     {
       "id": 6,
-      "path": "/about",
-      "name": "About Us"
+      "path": "books",
+      "name": "წიგნები"
     },
     {
       "id": 7,
-      "path": "/contact",
-      "name": "Contact Us"
+      "path": "/journals",
+      "name": "ჟურნალ-გაზეთები"
+    },
+    {
+      "id": 8,
+      "path": "printing",
+      "name": "ბეჭდვა"
     }
   ],
   "articles": [

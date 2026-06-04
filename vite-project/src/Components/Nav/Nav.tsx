@@ -23,7 +23,7 @@ function Nav (){
     },[])
 
     return(
-        <nav className="flex gap-3">
+        <nav className="flex gap-3 p-3">
             {menuData.map(item=>(
                <NavLink key={item.id} to={item.path} end>{item.name}</NavLink>
             ))}

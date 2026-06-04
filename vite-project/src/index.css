@@ -31,5 +31,5 @@
   @apply m-0 p-0 box-border;
 }
 body{
-  @apply font-bpg text-[rgba(20,32,68,.9)];
+  @apply font-bpg text-[rgba(20,32,68,.9)] bg-[#ecf0fc] dark:bg-[#0D152D] dark:text-[#D9E1F9];
 }

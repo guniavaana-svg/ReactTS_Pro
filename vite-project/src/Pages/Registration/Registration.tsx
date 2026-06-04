@@ -1,6 +1,7 @@
 
 import "./Registration.css";
 import { Formik, Form, Field } from 'formik';
+import { ErrorMessage } from "formik";
 import * as Yup from 'yup';
 import { API_URL } from "../../../config";
 import React from "react";
@@ -14,20 +15,42 @@ interface FormDataType{
     password:string
 }
 function Registration(){
-    const regExp={
-        alphaBet: /^[a-zA-Z]+$/,
-        email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-    }
-    const validate=Yup.object().shape({
-        firstname:Yup.string()
-            .matches(regExp.alphaBet,"ანბანის გარდა სხვა სიმბოლოებს ვერ გამოიყენებ")
+    const regExp = {
+        alphaBet: /^[a-zA-Zა-ჰ]+$/,
+        phone: /^\+?\d{9,15}$/,
+        uppercase: /[A-Z]/,
+        lowercase: /[a-z]/,
+        number: /\d/,
+        specialChar: /[@$!%*?&]/,
+    };
+    const validate = Yup.object().shape({
+        firstname: Yup.string()
+            .matches(regExp.alphaBet, "ანბანის გარდა სხვა სიმბოლოებს ვერ გამოიყენებ")
             .min(2, "შეიყვანე ორზე მეტი სიმბოლო")
-            .max(30, "30-ზე მეტ სიმბოლოს ვერ შეიყვან"),
-        lastname:Yup.string()
-            .matches(regExp.alphaBet,"ანბანის გარდა სხვა სიმბოლოებს ვერ გამოიყენებ")
+            .max(30, "30-ზე მეტ სიმბოლოს ვერ შეიყვან")
+            .required("სახელის ველი სავალდებულოა"),
+        lastname: Yup.string()
+            .matches(regExp.alphaBet, "ანბანის გარდა სხვა სიმბოლოებს ვერ გამოიყენებ")
             .min(2, "შეიყვანე ორზე მეტი სიმბოლო")
-            .max(30, "30-ზე მეტ სიმბოლოს ვერ შეიყვან"),
-    })
+            .max(30, "30-ზე მეტ სიმბოლოს ვერ შეიყვან")
+            .required("გვარის ველი სავალდებულოა"),
+        email: Yup.string()
+            .email("შეიყვანე სწორი ელ.ფოსტა")
+            .required("ელ.ფოსტის ველი სავალდებულოა"),
+        phone: Yup.string()
+            .matches(regExp.phone, "შეიყვანე სწორი ტელეფონის ნომერი")
+            .required("ტელეფონის ველი სავალდებულოა"),
+        password: Yup.string()
+            .min(8, "პაროლი უნდა იყოს მინიმუმ 8 სიმბოლო")
+            .matches(regExp.uppercase, "პაროლი უნდა შეიცავდეს მინიმუმ ერთ დიდ ასოს")
+            .matches(regExp.lowercase, "პაროლი უნდა შეიცავდეს მინიმუმ ერთ პატარა ასოს")
+            .matches(regExp.number, "პაროლი უნდა შეიცავდეს მინიმუმ ერთ ციფრს")
+            .matches(regExp.specialChar, "პაროლი უნდა შეიცავდეს მინიმუმ ერთ სპეციალურ სიმბოლოს")
+            .required("პაროლის ველი სავალდებულოა"),
+        confirmPassword: Yup.string()
+            .oneOf([Yup.ref("password")], "პაროლები არ ემთხვევა")
+            .required("გაიმეორე პაროლი"),
+    });
    async function handleSubmmit(e:React.SyntheticEvent<HTMLFormElement>){
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
@@ -62,34 +85,50 @@ function Registration(){
         
     }
     return(
-        <Formik>
-            <form onSubmit={handleSubmmit}>
+        <Formik initialValues={{
+            firstname: "",
+            lastname: "", 
+            email: "", 
+            phone: "", 
+            password: "", 
+            confirmPassword: "", 
+        }}
+        validationSchema={validate}
+        onSubmit={handleSubmmit}>
+            <Form >
+                <legend className="text-3xl font-mtavruli text-[#3454b4] text-center mb-5">რეგისტრაცია</legend>
                 <div>
                     <label htmlFor="">სახელი</label>
-                    <Field name="firstname"/>
+                    <Field className="input" name="firstname"/>
+                    <ErrorMessage name="firstname" component="span" className="error" />
                 </div>
                 <div>
                     <label htmlFor="">გვარი</label>
-                    <Field name="lastname"/>
+                    <Field className="input" name="lastname"/>
+                    <ErrorMessage name="lastname" component="span"  className="error" />
                 </div>
                 <div>
                     <label htmlFor="">მეილი</label>
-                    <Field name="email"/>
+                    <Field className="input" name="email"/>
+                    <ErrorMessage name="email" component="span" className="error"  />
                 </div>
                 <div>
                     <label htmlFor="">ტელეფონი</label>
-                    <Field name="phone"/>
+                    <Field className="input" name="phone"/>
+                    <ErrorMessage name="phone" component="span" className="error"  />
                 </div>
                 <div>
                     <label htmlFor="">პაროლი</label>
-                    <Field name="password"/>
+                    <Field className="input" name="password"/>
+                    <ErrorMessage name="password" component="span" className="error" />
                 </div>
                 <div>
                     <label htmlFor="">გაიმეორე პაროლი</label>
-                    <Field name="confirmPassword"/>
+                    <Field className="input" name="confirmPassword"/>
+                    <ErrorMessage name="confirmPassword" component="span" className="error" />
                 </div>
-                <button type="submit">რეგისტრაცია</button>
-            </form>
+                <button className="w-full bg-[#3454b4] hover:bg-[#2e4a9e] hover:text-[#d9e1f9] text-[#ecf0fc] font-semibold tracking-[2px] py-2 rounded-lg my-5" type="submit">რეგისტრაცია</button>
+            </Form>
         </Formik>
     )
 }
