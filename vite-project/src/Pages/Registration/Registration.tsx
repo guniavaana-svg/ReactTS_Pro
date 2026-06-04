@@ -96,7 +96,7 @@ function Registration(){
         validationSchema={validate}
         onSubmit={handleSubmmit}>
             <Form >
-                <legend className="text-3xl font-mtavruli text-[#3454b4] text-center mb-5">რეგისტრაცია</legend>
+                <legend className="text-3xl font-mtavruli text-btnLight dark:text-light2 text-center mb-5">რეგისტრაცია</legend>
                 <div>
                     <label htmlFor="">სახელი</label>
                     <Field className="input" name="firstname"/>

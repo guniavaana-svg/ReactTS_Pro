@@ -13,7 +13,17 @@ export default {
         unicode: ['"3D Unicode"', 'serif'],
         mtavruli: ['"BPG Nino Mtavruli"', 'serif'],
       },
+      colors: {
+        btnLight:"#3454b4",
+        btnDark:"#033AA8",
+        light1:"#ecf0fc",
+        light2:"#d9e1f9",
+        dark1:"#0d152d",
+        dark2:"#142044",
+        darkshadow:"#1a2a5a"
+      }
     },
+     
   },
   plugins: [
     require('tailwind-scrollbar-hide'),

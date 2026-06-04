@@ -34,7 +34,7 @@ function LogIn(){
     } 
     return(
         <form onSubmit={handleLogin} className="flex flex-col">
-            <legend className="text-3xl font-mtavruli text-[#3454b4] text-center mb-5">შესვლა</legend>
+            <legend className="text-3xl font-mtavruli ext-btnLight dark:text-light2 text-center mb-5">შესვლა</legend>
             <label >მეილი</label>
             <input  className="input" type="text" placeholder="შეიყვანე მეილი" name="email"/>
             <label >პაროლი</label>
