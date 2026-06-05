@@ -45,9 +45,9 @@ useEffect(()=>{
                 <span className={`${ (scrolled > 50 ) ? "hidden" : "block "} text-[#4169E1] text-[24px] font-unicode font-medium`}>წერო</span>
             </div>
             <div className="flex items-center justify-center bg-[#3454b4] text-[#ecf0fc] dark:bg-[#033AA8] px-2 py-1 rounded-[10px]">
-                <button onClick={()=>setIsOpen(true)} className="font-mtavruli leading-none flex items-center px-2 py-1 h-[20px] ">
+                <button onClick={()=>setIsOpen(true)} className="font-mtavruli leading-none flex items-center p-1 h-[20px] gap-2 ">
                     <FiUser className="text-[#ecf0fc] w-[20px]  h-[20px]"/>
-                    <span className="translate-y-[2px]">რეგისტრაცია / შესვლა</span>
+                    <span className="translate-y-[2px]">ავტორიზაცია</span>
                 </button>
                 {isOpen && (
                     <div onClick={()=>setIsOpen(false)} className="fixed inset-0 z-50 flex items-center justify-center bg-[#0d152d] bg-opacity-50 dark:bg-opacity-80 dark:bg-darkshadow">

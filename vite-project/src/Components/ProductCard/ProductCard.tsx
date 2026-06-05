@@ -20,7 +20,6 @@ function ProductCard(props:productСardPropsType){
             <span className="font-bold p-2 border-[1px] border-light2 bg-light2 rounded-xl">{price}{currency}</span>
             <NavLink to={id}>goooo</NavLink>
         </div>
-      
     </div>)
 }
 export default ProductCard
