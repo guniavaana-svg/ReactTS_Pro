@@ -14,19 +14,22 @@ import UserPage from "../Dashboard/pages/UserPage/UserPage.tsx";
 import DashLayout from "../Dashboard/DashLayout.tsx";
 import Dashboard from "../Dashboard/Dashbard.tsx";
 import PassChange from "../Dashboard/PassChange.tsx";
+import CardDetail from "../Components/CardDetail/CardDetail.tsx";
 
 function NavRoutes(){
     return(
         <Routes>
             <Route path="/" element={<Layout/>}>
                 <Route index element={<Home/>}/>
-                <Route path="benefits" element={<Benefit/>}/>
-                <Route path="tours" element={<Tours/>} />
-                <Route path="tours/:id" element={<ToursDet/>}/>
-                <Route path="stories" element={<Stories/>}/>
-                <Route path="book" element={<Book/>}/>
-                <Route path="about" element={<About/>}/>
-                <Route path="contact" element={<Contact/>}/>
+                <Route path="papier" element={<Benefit/>}/>
+                <Route path="Stationery" element={<Benefit/>} />
+                <Route path="Notebooks&Diaries" element={<Home/>} />
+                <Route path="Notebooks&Diaries/:id" element={<CardDetail/>}/>
+                <Route path="giftcards" element={<Stories/>}/>
+                <Route path="Art_Supplies" element={<Book/>}/>
+                <Route path="books" element={<About/>}/>
+                <Route path="journals" element={<Contact/>}/>
+                <Route path="printing" element={<Contact/>}/>
                 <Route path="registration" element={<Registration/>}/>
                 <Route path="login" element={<LogIn/>}/>
             </Route>

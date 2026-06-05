@@ -17,24 +17,8 @@
       "phone": "55555255",
       "password": "123",
       "id": 6
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "phone": "",
-      "password": "",
-      "confirmPassword": "",
-      "id": 7
     }
   ],
-  "UserRegistrationErrors": {
-    "firstame": "you mast enter your firstname, dont use numbers",
-    "lastname": "you mast enter your lastname, dont use numbers",
-    "gender": "chose your gender",
-    "phone": "enter your phone , use only numbers",
-    "password": "enter your password"
-  },
   "menu": [
     {
       "id": 1,
@@ -53,7 +37,7 @@
     },
     {
       "id": 4,
-      "path": "Notebooks & Diaries",
+      "path": "Notebooks&Diaries",
       "name": "რვეულები და დღიურები"
     },
     {
@@ -63,7 +47,7 @@
     },
     {
       "id": 5,
-      "path": "Art Supplies",
+      "path": "Art_Supplies",
       "name": "სამხატვრო მასალები"
     },
     {
@@ -82,281 +66,394 @@
       "name": "ბეჭდვა"
     }
   ],
-  "articles": [
+  "products": [
     {
       "id": 1,
-      "category_id": 1,
-      "title": "You're going to fall in love with nature",
-      "mainImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "name": "Moleskine კლასიკური ნოუთბუქი A5 — შავი",
+      "description": "Moleskine-ის ლეგენდარული ნოუთბუქი — 240 გვერდი, კრემისფერი ხარისხიანი ქაღალდი, ელასტიური დამჭერი ზოლი, ჩაშენებული ჩანიშვნის ვადი და ჯიბის კონვერტი. მყარი ყდა, კლასიკური შავი ფერი.",
+      "category": "დღიურები და ნოუთბუქები",
+      "subcategory": "პრემიუმ ნოუთბუქები",
+      "brand": "Moleskine",
+      "sku": "NOT-MOL-A5-001",
+      "price": 42.90,
+      "currency": "GEL",
+      "discountPercentage": 8.0,
+      "rating": 4.9,
+      "stock": 120,
+      "availability": "მარაგშია",
+      "returnPolicy": "14 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "200გ",
+      "tags": ["ნოუთბუქი", "დღიური", "პრემიუმ", "კლასიკა"],
+      "thumbnail": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+        "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80",
+        "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=800&q=80",
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80"
       ],
-      "description": "Nature has an incredible way of calming the mind and restoring balance in life.",
-      "subtitles": [
-        {
-          "title": "Why nature improves your mental health",
-          "text": "Spending time in nature reduces stress, improves focus, and helps your mind reset."
-        },
-        {
-          "title": "How to connect with nature daily",
-          "text": "Simple habits like walking in a park or watching the sunset can help you reconnect with nature."
-        }
-      ],
-      "cotnent": "Exploring nature is more than just a hobby—it transforms your mindset and brings peace into your life."
+      "specifications": [{
+        "size": "A5 (14.8×21 სმ)",
+        "pages": 240,
+        "cover": "მყარი",
+        "ruling": "ხაზგასმული",
+        "color": "შავი",
+        "paperWeight": "70გ/მ²"
+      }]
     },
     {
       "id": 2,
-      "category_id": 2,
-      "title": "Live adventures like you never have before",
-      "mainImage": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800",
+      "name": "Leuchtturm1917 დღიური A5 — ზღვისფერი",
+      "description": "გერმანული სიზუსტე და დიზაინი — 249 დანომრილი გვერდი, 2 ჩანიშვნის ვადი, ჯიბის კონვერტი, სტიკერები გვერდის სათაურებისთვის. 80გ/მ² ქაღალდი — მელანი არ ჩასჭვირდება. ბლეთჯორნალისტების საყვარელი.",
+      "category": "დღიურები და ნოუთბუქები",
+      "subcategory": "პრემიუმ ნოუთბუქები",
+      "brand": "Leuchtturm1917",
+      "sku": "NOT-LEU-A5-002",
+      "price": 38.50,
+      "currency": "GEL",
+      "discountPercentage": 5.0,
+      "rating": 4.8,
+      "stock": 85,
+      "availability": "მარაგშია",
+      "returnPolicy": "14 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "220გ",
+      "tags": ["ნოუთბუქი", "დღიური", "გერმანული", "ბლეთჯორნალი"],
+      "thumbnail": "https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1527631746610-bca00a040d60",
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800"
+        "https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?w=800&q=80",
+        "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80",
+        "https://images.unsplash.com/photo-1470549638415-0a0755be0619?w=800&q=80"
       ],
-      "description": "Adventure is about stepping beyond your comfort zone and embracing the unknown.",
-      "subtitles": [
-        {
-          "title": "The power of new experiences",
-          "text": "Trying new things helps you grow and builds confidence."
-        },
-        {
-          "title": "Why travel changes your life",
-          "text": "Travel exposes you to new cultures and perspectives."
-        }
-      ],
-      "content": "Living an adventurous life means saying yes to challenges and exploring beyond your limits."
+      "specifications": [{
+        "size": "A5 (14.8×21 სმ)",
+        "pages": 249,
+        "cover": "მყარი",
+        "ruling": "წერტილოვანი (დოთ-გრიდი)",
+        "color": "ზღვისფერი",
+        "paperWeight": "80გ/მ²",
+        "numberedPages": true
+      }]
     },
     {
       "id": 3,
-      "category_id": 3,
-      "title": "Discover the beauty of mountain escapes",
-      "mainImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "name": "Traveler's Notebook — ჩოხისფერი ტყავი",
+      "description": "იაპონური ხელნაკეთი ტყავის ნოუთბუქი — ბუნებრივი ტყავი, რომელიც დროთა განმავლობაში კიდევ უფრო ლამაზდება. ჩასანაცვლებელი ბლოკები, ელასტიური ზოლი. მოგზაურობისა და ჩანახატების ჩასაწერად.",
+      "category": "დღიურები და ნოუთბუქები",
+      "subcategory": "ტყავის დღიურები",
+      "brand": "Traveler's Company",
+      "sku": "NOT-TRA-LEA-003",
+      "price": 89.00,
+      "currency": "GEL",
+      "discountPercentage": 0.0,
+      "rating": 4.9,
+      "stock": 30,
+      "availability": "მარაგშია",
+      "returnPolicy": "არ ბრუნდება",
+      "minimumOrderQuantity": 1,
+      "weight": "100გ",
+      "tags": ["ტყავი", "დღიური", "იაპონური", "მოგზაურობა"],
+      "thumbnail": "https://images.unsplash.com/photo-1601645191163-3fc0d5d64e35?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-        "https://images.unsplash.com/photo-1470770841072-f978cf4d019e",
-        "https://images.unsplash.com/photo-1448375240586-882707db888b"
+        "https://images.unsplash.com/photo-1601645191163-3fc0d5d64e35?w=800&q=80",
+        "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80",
+        "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80"
       ],
-      "description": "Mountains offer breathtaking views, fresh air, and unforgettable adventures.",
-      "subtitles": [
-        {
-          "title": "Why mountain trips are refreshing",
-          "text": "The peaceful atmosphere of the mountains helps you recharge mentally and physically."
-        },
-        {
-          "title": "Best activities to try in the mountains",
-          "text": "Hiking, camping, and photography are perfect ways to enjoy mountain landscapes."
-        }
-      ],
-      "content": "A mountain escape can inspire you to slow down, appreciate nature, and reconnect with yourself."
+      "specifications": [{
+        "size": "სტანდარტი (22×12 სმ)",
+        "material": "ბუნებრივი ტყავი",
+        "refills": "ჩასანაცვლებელი",
+        "color": "ჩოხისფერი",
+        "origin": "იაპონია"
+      }]
     },
     {
       "id": 4,
-      "category_id": 2,
-      "title": "Experience the magic of ocean journeys",
-      "mainImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "name": "Lamy Safari საწერი კალამი — გრაფიტისფერი",
+      "description": "გერმანული დიზაინის კლასიკა. ABS პლასტიკი, სამკუთხა ეჭერი — ხელი არ ეღლება. ინკ კარტრიჯი ან კონვერტერი. გლუვი, სუფთა, ელეგანტური წერა. F ნიბი — ბლეთჯორნალისტების #1 კალამი.",
+      "category": "დღიურები და ნოუთბუქები",
+      "subcategory": "საწერი კალმები",
+      "brand": "Lamy",
+      "sku": "KAL-LAM-SAF-004",
+      "price": 58.00,
+      "currency": "GEL",
+      "discountPercentage": 0.0,
+      "rating": 4.8,
+      "stock": 55,
+      "availability": "მარაგშია",
+      "returnPolicy": "14 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "17გ",
+      "tags": ["საწერი კალამი", "fountain pen", "გერმანული", "ბლეთჯორნალი"],
+      "thumbnail": "https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-        "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
-        "https://images.unsplash.com/photo-1519046904884-53103b34b206"
+        "https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=800&q=80",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80",
+        "https://images.unsplash.com/photo-1503694978374-8a2fa686963a?w=800&q=80"
       ],
-      "description": "The ocean inspires freedom, adventure, and moments of pure relaxation.",
-      "subtitles": [
-        {
-          "title": "Why the sea calms the soul",
-          "text": "The sound of waves and the open horizon create a sense of peace and clarity."
-        },
-        {
-          "title": "Activities to enjoy by the ocean",
-          "text": "Swimming, surfing, and beach walks make every ocean trip memorable."
-        }
-      ],
-      "content": "Ocean journeys remind us how vast and beautiful the world truly is."
+      "specifications": [{
+        "nib": "F (Fine)",
+        "nibMaterial": "უჟანგავი ფოლადი",
+        "filling": "კარტრიჯი / კონვერტერი",
+        "body": "ABS პლასტიკი",
+        "color": "გრაფიტისფერი",
+        "origin": "გერმანია"
+      }]
     },
     {
       "id": 5,
-      "category_id": 4,
-      "title": "Explore cities full of culture and life",
-      "mainImage": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df",
+      "name": "Winsor & Newton Cotman აკვარელი — 12 ფერი",
+      "description": "Winsor & Newton Cotman — პროფესიონალთა ხარისხი ხელმისაწვდომ ფასად. 12 ინტენსიური ფერი ნახევარ-პანის ფორმატში, მაღალი პიგმენტაცია, ადვილი შერევა. ლამაზი გრადიენტები. დამწყები და გამოცდილი მხატვრებისთვის.",
+      "category": "სახატავი მასალები",
+      "subcategory": "აკვარელი",
+      "brand": "Winsor & Newton",
+      "sku": "AKV-WIN-COT-005",
+      "price": 34.90,
+      "currency": "GEL",
+      "discountPercentage": 10.0,
+      "rating": 4.7,
+      "stock": 95,
+      "availability": "მარაგშია",
+      "returnPolicy": "14 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "185გ",
+      "tags": ["აკვარელი", "ხატვა", "მხატვრობა", "საშემოქმედო"],
+      "thumbnail": "https://images.unsplash.com/photo-1526510747491-58f928ec870f?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df",
-        "https://images.unsplash.com/photo-1494526585095-c41746248156",
-        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000"
+        "https://images.unsplash.com/photo-1526510747491-58f928ec870f?w=800&q=80",
+        "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=800&q=80",
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
       ],
-      "description": "Cities are vibrant places where culture, history, and modern life come together.",
-      "subtitles": [
-        {
-          "title": "What makes cities exciting",
-          "text": "Every city has its own energy, traditions, and hidden gems to explore."
-        },
-        {
-          "title": "How urban travel broadens your perspective",
-          "text": "Meeting new people and experiencing different lifestyles helps you grow."
-        }
-      ],
-      "content": "Exploring cities allows you to experience diversity, creativity, and endless inspiration."
+      "specifications": [{
+        "colors": 12,
+        "format": "ნახევარ-პანი (half-pan)",
+        "pigmentation": "მაღალი",
+        "series": "Cotman",
+        "packaging": "ლითონის ყუთი"
+      }]
     },
     {
       "id": 6,
-      "category_id": 1,
-      "title": "Reconnect with yourself through peaceful forests",
-      "mainImage": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "name": "Staedtler Mars Lumograph გრაფიტის კომპლექტი — 12 სიხისტე",
+      "description": "პროფესიონალი ილუსტრატორებისა და ტექნიკური მხატვრების სტანდარტი. 12 ფანქარი 6B-დან 4H-მდე. თანაბარი, გლუვი გრაფიტი, ადვილი წაშლა, კედარის ხის კორპუსი. ლითონის ყუთი.",
+      "category": "სახატავი მასალები",
+      "subcategory": "გრაფიტის ფანქრები",
+      "brand": "Staedtler",
+      "sku": "GRA-STA-LUM-006",
+      "price": 27.50,
+      "currency": "GEL",
+      "discountPercentage": 6.0,
+      "rating": 4.9,
+      "stock": 160,
+      "availability": "მარაგშია",
+      "returnPolicy": "30 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "130გ",
+      "tags": ["ფანქარი", "გრაფიტი", "ნახატი", "სქეჩი", "პროფესიონალი"],
+      "thumbnail": "https://images.unsplash.com/photo-1553481187-be93c21490a9?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-        "https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1",
-        "https://images.unsplash.com/photo-1500534623283-312aade485b7"
+        "https://images.unsplash.com/photo-1553481187-be93c21490a9?w=800&q=80",
+        "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=800&q=80",
+        "https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&q=80"
       ],
-      "description": "Forests provide a quiet escape from busy daily life and help restore inner peace.",
-      "subtitles": [
-        {
-          "title": "The healing power of forests",
-          "text": "Being surrounded by trees can reduce anxiety and improve overall well-being."
-        },
-        {
-          "title": "Ways to enjoy forest adventures",
-          "text": "Nature walks, meditation, and camping are wonderful forest experiences."
-        }
-      ],
-      "content": "Peaceful forests remind us to slow down, breathe deeply, and enjoy the beauty around us."
+      "specifications": [{
+        "quantity": 12,
+        "hardnessRange": "6B — 4H",
+        "body": "კედარი",
+        "pigment": "გრაფიტი",
+        "packaging": "ლითონის ყუთი"
+      }]
     },
     {
       "id": 7,
-      "category_id": 1,
-      "title": "You're going to fall in love with nature",
-      "mainImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "name": "Sakura Pigma Micron ფაინლაინერი — 6 ზომა",
+      "description": "ილუსტრაციისა და ბლეთჯორნალისტიკის ოქროს სტანდარტი. UV-მდგრადი, წყალმდგრადი, არქივის ხარისხის პიგმენტი. 6 სხვადასხვა სიგანე (005–08). ხაზი არ იბუნდება, მელანი არ ასვრის.",
+      "category": "სახატავი მასალები",
+      "subcategory": "ფაინლაინერები",
+      "brand": "Sakura",
+      "sku": "FIN-SAK-MIC-007",
+      "price": 21.90,
+      "currency": "GEL",
+      "discountPercentage": 0.0,
+      "rating": 4.9,
+      "stock": 200,
+      "availability": "მარაგშია",
+      "returnPolicy": "14 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "45გ",
+      "tags": ["ფაინლაინერი", "ნახატი", "მელანი", "ბლეთჯორნალი", "ილუსტრაცია"],
+      "thumbnail": "https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+        "https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=800&q=80",
+        "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&q=80",
+        "https://images.unsplash.com/photo-1540317580384-e5d43867caa6?w=800&q=80"
       ],
-      "description": "Nature has an incredible way of calming the mind and restoring balance in life.",
-      "subtitles": [
-        {
-          "title": "Why nature improves your mental health",
-          "text": "Spending time in nature reduces stress, improves focus, and helps your mind reset."
-        },
-        {
-          "title": "How to connect with nature daily",
-          "text": "Simple habits like walking in a park or watching the sunset can help you reconnect with nature."
-        }
-      ],
-      "cotnent": "Exploring nature is more than just a hobby—it transforms your mindset and brings peace into your life."
+      "specifications": [{
+        "sizes": ["005", "01", "02", "03", "05", "08"],
+        "inkType": "პიგმენტი",
+        "waterproof": true,
+        "uvResistant": true,
+        "color": "შავი"
+      }]
     },
     {
       "id": 8,
-      "category_id": 1,
-      "title": "You're going to fall in love with nature",
-      "mainImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "name": "Canson XL სახატავი ბლოკი A4 — 120გ, 50 ფურცელი",
+      "description": "საყოველთაო სახატავი ბლოკი გრაფიტისთვის, ნახშირისთვის, ფერადი ფანქრებისთვის და მარკერებისთვის. 120გ/მ², ოდნავ ფაქტუირებული ზედაპირი, სპირალური შეკვრა — ფურცლები ადვილად სჭრება.",
+      "category": "სახატავი მასალები",
+      "subcategory": "სახატავი ქაღალდი და ბლოკები",
+      "brand": "Canson",
+      "sku": "BLO-CAN-XL-008",
+      "price": 16.90,
+      "currency": "GEL",
+      "discountPercentage": 12.0,
+      "rating": 4.6,
+      "stock": 220,
+      "availability": "მარაგშია",
+      "returnPolicy": "14 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "400გ",
+      "tags": ["სახატავი", "ბლოკი", "ქაღალდი", "ნახატი", "A4"],
+      "thumbnail": "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+        "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?w=800&q=80",
+        "https://images.unsplash.com/photo-1603484477859-abe6a73f9366?w=800&q=80",
+        "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800&q=80"
       ],
-      "description": "Nature has an incredible way of calming the mind and restoring balance in life.",
-      "subtitles": [
-        {
-          "title": "Why nature improves your mental health",
-          "text": "Spending time in nature reduces stress, improves focus, and helps your mind reset."
-        },
-        {
-          "title": "How to connect with nature daily",
-          "text": "Simple habits like walking in a park or watching the sunset can help you reconnect with nature."
-        }
-      ],
-      "cotnent": "Exploring nature is more than just a hobby—it transforms your mindset and brings peace into your life."
+      "specifications": [{
+        "size": "A4 (21×29.7 სმ)",
+        "paperWeight": "120გ/მ²",
+        "sheets": 50,
+        "binding": "სპირალური",
+        "surface": "ოდნავ ფაქტუირებული"
+      }]
     },
     {
       "id": 9,
-      "category_id": 1,
-      "title": "You're going to fall in love with nature",
-      "mainImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "name": "Faber-Castell Polychromos ფერადი ფანქრები — 36 ფერი",
+      "description": "ზეთოვანი ბაზის ფერადი ფანქრები, ბრწყინვალე პიგმენტაცია, მდგრადია სინათლისა და წყლის მიმართ. რბილი, კრემისებური ნახატი, ეშვება ფენებად. პროფესიონალი ილუსტრატორების #1 ფანქრები.",
+      "category": "სახატავი მასალები",
+      "subcategory": "ფერადი ფანქრები",
+      "brand": "Faber-Castell",
+      "sku": "FAN-FAB-POL-009",
+      "price": 97.00,
+      "currency": "GEL",
+      "discountPercentage": 5.0,
+      "rating": 4.9,
+      "stock": 60,
+      "availability": "მარაგშია",
+      "returnPolicy": "14 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "550გ",
+      "tags": ["ფერადი ფანქარი", "ხელოვნება", "ილუსტრაცია", "პროფესიონალი"],
+      "thumbnail": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+        "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80",
+        "https://images.unsplash.com/photo-1560421683-6856ea585c78?w=800&q=80",
+        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&q=80"
       ],
-      "description": "Nature has an incredible way of calming the mind and restoring balance in life.",
-      "subtitles": [
-        {
-          "title": "Why nature improves your mental health",
-          "text": "Spending time in nature reduces stress, improves focus, and helps your mind reset."
-        },
-        {
-          "title": "How to connect with nature daily",
-          "text": "Simple habits like walking in a park or watching the sunset can help you reconnect with nature."
-        }
-      ],
-      "cotnent": "Exploring nature is more than just a hobby—it transforms your mindset and brings peace into your life."
+      "specifications": [{
+        "colors": 36,
+        "base": "ზეთოვანი",
+        "lightfastness": true,
+        "waterResistant": true,
+        "packaging": "ლითონის ყუთი"
+      }]
     },
     {
       "id": 10,
-      "category_id": 1,
-      "title": "You're going to fall in love with nature",
-      "mainImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "name": "Copic Sketch მარკერი — ერთეული",
+      "description": "მსოფლიოში ყველაზე პოპულარული მარკერი ილუსტრატორებსა და მანგა-მხატვრებში. ალკოჰოლური ბაზა, ბრწყინვალე ბლენდინგი, ჩასანაცვლებელი ბუშტი და ჩასავსები. 358 ფერი.",
+      "category": "სახატავი მასალები",
+      "subcategory": "მარკერები",
+      "brand": "Copic",
+      "sku": "MAR-COP-SKE-010",
+      "price": 19.50,
+      "currency": "GEL",
+      "discountPercentage": 0.0,
+      "rating": 4.8,
+      "stock": 300,
+      "availability": "მარაგშია",
+      "returnPolicy": "7 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "18გ",
+      "tags": ["მარკერი", "ილუსტრაცია", "მანგა", "ბლენდინგი"],
+      "thumbnail": "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+        "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800&q=80",
+        "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80",
+        "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&q=80"
       ],
-      "description": "Nature has an incredible way of calming the mind and restoring balance in life.",
-      "subtitles": [
-        {
-          "title": "Why nature improves your mental health",
-          "text": "Spending time in nature reduces stress, improves focus, and helps your mind reset."
-        },
-        {
-          "title": "How to connect with nature daily",
-          "text": "Simple habits like walking in a park or watching the sunset can help you reconnect with nature."
-        }
-      ],
-      "cotnent": "Exploring nature is more than just a hobby—it transforms your mindset and brings peace into your life."
+      "specifications": [{
+        "base": "ალკოჰოლური",
+        "tipType": "ორმხრივი (broad + super brush)",
+        "refillable": true,
+        "availableColors": 358,
+        "replaceable": true
+      }]
     },
     {
       "id": 11,
-      "category_id": 1,
-      "title": "You're going to fall in love with nature",
-      "mainImage": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "name": "Princeton Velvetouch სახატავი ფუნჯების კომპლექტი — 6 ცალი",
+      "description": "სინთეტიკური ფუნჯები, რომლებიც ბუნებრივი ფუნჯის შეგრძნებას იძლევა. შესაფერისია აკვარელისთვის, გუაშისთვის და აკრილისთვის. 6 სხვადასხვა ფორმა — ბრტყელი, მრგვალი, კატის ენა, ფანქარი.",
+      "category": "სახატავი მასალები",
+      "subcategory": "ფუნჯები",
+      "brand": "Princeton",
+      "sku": "FUN-PRI-VEL-011",
+      "price": 44.90,
+      "currency": "GEL",
+      "discountPercentage": 8.0,
+      "rating": 4.7,
+      "stock": 75,
+      "availability": "მარაგშია",
+      "returnPolicy": "14 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "80გ",
+      "tags": ["ფუნჯი", "სახატავი", "აკვარელი", "გუაში", "მხატვრობა"],
+      "thumbnail": "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+        "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=80",
+        "https://images.unsplash.com/photo-1546776310-eef45dd6d63c?w=800&q=80",
+        "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800&q=80"
       ],
-      "description": "Nature has an incredible way of calming the mind and restoring balance in life.",
-      "subtitles": [
-        {
-          "title": "Why nature improves your mental health",
-          "text": "Spending time in nature reduces stress, improves focus, and helps your mind reset."
-        },
-        {
-          "title": "How to connect with nature daily",
-          "text": "Simple habits like walking in a park or watching the sunset can help you reconnect with nature."
-        }
+      "specifications": [{
+        "quantity": 6,
+        "material": "სინთეტიკა",
+        "types": ["მრგვალი", "ბრტყელი", "კატის ენა", "ფანქარი"],
+        "usage": ["აკვარელი", "გუაში", "აკრილი"],
+        "handle": "ხის, მოკლე"
+      }]
+    },
+    {
+      "id": 12,
+      "name": "Hobonichi Techo Cousin A5 — 2025",
+      "description": "იაპონური კულტური პლანერ-დღიური — ყოველდღიური, ყოველკვირეული და ყოველთვიური სქემები. Tomoe River ქაღალდი (52გ/მ²) — წყლისებური, მაგრამ გამჭვირვალე, ქმნის 'ghost' ეფექტს. ბლეთჯორნალისტების #1 დღიური.",
+      "category": "დღიურები და ნოუთბუქები",
+      "subcategory": "პლანერები",
+      "brand": "Hobonichi",
+      "sku": "NOT-HOB-A5-012",
+      "price": 74.00,
+      "currency": "GEL",
+      "discountPercentage": 0.0,
+      "rating": 4.8,
+      "stock": 40,
+      "availability": "მარაგშია",
+      "returnPolicy": "7 დღის განმავლობაში",
+      "minimumOrderQuantity": 1,
+      "weight": "250გ",
+      "tags": ["პლანერი", "დღიური", "იაპონური", "2025", "ბლეთჯორნალი"],
+      "thumbnail": "https://images.unsplash.com/photo-1506784365847-bbad939e9501?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1506784365847-bbad939e9501?w=800&q=80",
+        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
+        "https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=800&q=80"
       ],
-      "cotnent": "Exploring nature is more than just a hobby—it transforms your mindset and brings peace into your life."
-    }
-  ],
-  "articleCategory": [
-    {
-      "id": 1,
-      "name": "Nature & Wellness",
-      "slug": "nature-wellness"
-    },
-    {
-      "id": 2,
-      "name": "Adventure & Travel",
-      "slug": "adventure-travel"
-    },
-    {
-      "id": 3,
-      "name": "Mountains & Escapes",
-      "slug": "mountains-escapes"
-    },
-    {
-      "id": 4,
-      "name": "Urban & Culture",
-      "slug": "urban-culture"
+      "specifications": [{
+        "size": "A5",
+        "paper": "Tomoe River 52გ/მ²",
+        "type": "ყოველდღიური პლანერი",
+        "year": 2025,
+        "language": "იაპონური / ინგლისური"
+      }]
     }
   ]
 }

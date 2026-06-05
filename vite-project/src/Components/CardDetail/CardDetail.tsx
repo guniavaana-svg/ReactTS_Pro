@@ -1,47 +1,44 @@
 import "./CardDetail.css";
-interface SubttilesType{
-    title?:string;
-    text?:string;
+interface productPropsType{
+  id?: number;
+  name?: string;
+  description?: string;
+  category?: string;
+  subcategory?: string;
+  brand?: string;
+  sku?: string;
+  price?: number;
+  currency?: string;
+  discountPercentage?: number;
+  rating?: number;
+  stock?: number;
+  availability?: string;
+  returnPolicy?: string;
+  minimumOrderQuantity?: number;
+  weight?: string;
+  tags?: string[];
+  thumbnail?: string;
+  images?: string[];
+  specifications?: Specification[];
 }
-interface CardDetailPropsType{
-    title?:string;
-    images?:string[];
-    mainImage?:string;
-    description?:string;
-    subtitles?:SubttilesType[];
+interface Specification {
+  size?: string;
+  pages?: number;
+  cover?: string;
+  ruling?: string;
+  color?: string;
+  paperWeight?: string;
 }
 
-function CardDetail(props:CardDetailPropsType){
-    const{title,description,images, subtitles,mainImage}=props;
+function CardDetail(props:productPropsType){
+    const{id, name, description, category, subcategory, brand, sku, price, currency, discountPercentage, rating, stock, availability, returnPolicy, minimumOrderQuantity, weight, tags, thumbnail, images, specifications}=props;
     return(
-        <>
-        <div className="flex justify-center items-center overflow-hidden w-full">
-            <img src={mainImage} alt="image" className="object-fit-cover"/>
-        </div>
-        <div className="titlebox">
-            <h1>{title}</h1>
-            <p>{description}</p>
-        </div>
-      <div className="subimage and subtitle box">
-        <div className="subtitle">
-            
-        </div>
-        <div className="images">
-            {images?.map((item,index)=>(
-                <img key={index} src={item} alt={`image${index}`} />
-            ))}
-            <img src="" alt="" />
-        </div>
-        <div className="subheading">
-             {subtitles?.map((item, index) => (
-            <div key={index}>
-              <h2>{item.title}</h2>
-              <p>{item.text}</p>
+        <section className="sectionCardDEtail flex gap-2">
+            <div className="imagebox flex-1 max-w-full">
+                <img src={thumbnail} alt={thumbnail} />
             </div>
-          ))}
-        </div>
-      </div>
-        </>
+            <div className="detailbox flex-1 max-w-full"></div>
+        </section>
     )
 }
 export default CardDetail;
