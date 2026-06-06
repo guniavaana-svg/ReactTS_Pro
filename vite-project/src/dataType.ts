@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import { API_URL } from "../../../config";
-import ProductCard from "../../Components/ProductCard.tsx"
-interface productDataType{
+export interface StationeryDataType{
   id?: number;
   name?: string;
   description?: string;
@@ -31,7 +28,4 @@ interface Specification {
   color?: string;
   paperWeight?: string;
 }
-function home(){
-  return(<h2>მთავარი გვერდი</h2>)
-}
-export default home;
+

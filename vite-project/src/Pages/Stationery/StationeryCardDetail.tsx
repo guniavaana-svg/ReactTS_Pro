@@ -1,43 +1,24 @@
-import "./CardDetail.css";
-import { IoCartOutline } from "react-icons/io5";;
-interface productPropsType{
-  id?: number;
-  name?: string;
-  description?: string;
-  category?: string;
-  subcategory?: string;
-  brand?: string;
-  sku?: string;
-  price?: number;
-  currency?: string;
-  discountPercentage?: number;
-  rating?: number;
-  stock?: number;
-  availability?: string;
-  returnPolicy?: string;
-  minimumOrderQuantity?: number;
-  weight?: string;
-  tags?: string[];
-  thumbnail?: string;
-  images?: string[];
-  specifications?: Specification[];
-}
-interface Specification {
-  size?: string;
-  pages?: number;
-  cover?: string;
-  ruling?: string;
-  color?: string;
-  paperWeight?: string;
-}
-
-function CardDetail(props:productPropsType){
-    const{id, name, description, category, subcategory, brand, sku, price, currency, discountPercentage, rating, stock, availability, returnPolicy, minimumOrderQuantity, weight, tags, thumbnail, images, specifications}=props;
+import type {StationeryDataType} from "../../dataType.ts"
+import { IoCartOutline } from "react-icons/io5"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import { API_URL } from "../../../config.ts";
+function StationeryCardDetail(){
+    const [stationeryData, setStationeryData] = useState<StationeryDataType>();
+    const{id}=useParams();
+    useEffect(() => {
+        async function getStationeryData() {
+            const response = await fetch(`${API_URL}/stationery/${id}`);
+            const data:StationeryDataType = await response.json();
+            setStationeryData(data);
+        }
+    getStationeryData();
+  }, []);
     return(
         <section className="sectionCardDEtail flex gap-2">
             <div className="imagebox flex-1 max-w-full">
                 <div>
-                    <img src={thumbnail} alt={thumbnail} />
+                    <img src={stationeryData?.thumbnail} alt={stationeryData?.thumbnail} />
                 </div>
                 <div>
                     {/* {images.map((item)=>(
@@ -48,9 +29,9 @@ function CardDetail(props:productPropsType){
                 </div>
             </div>
             <div className="detailbox flex-1 max-w-full">
-                <h2>{name}</h2>
-                <span>{brand}</span>
-                <span>{stock}</span>
+                <h2>{}</h2>
+                <span>{}</span>
+                <span>{}</span>
                <div>
                 <input type="number" name="quantity" />
                </div>
@@ -60,9 +41,9 @@ function CardDetail(props:productPropsType){
                </button>
                <div>
                 <h3>აღწერილობა</h3>
-                <p>{description}</p>
+                <p>{}</p>
                 <h3>ზომები</h3>
-                <p>{specifications}</p>
+                <p>{}</p>
                 <h3>მიწოდების პირობები და ვადები</h3>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id deserunt voluptates fuga explicabo, magnam illum recusandae rem beatae deleniti, laudantium labore, minima vel enim! Veniam, ea voluptatibus. Sequi, error perferendis.</p>
                </div>
@@ -70,4 +51,4 @@ function CardDetail(props:productPropsType){
         </section>
     )
 }
-export default CardDetail;
+export default StationeryCardDetail;

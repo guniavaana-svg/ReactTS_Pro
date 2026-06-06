@@ -20,7 +20,7 @@ export default {
         light2:"#d9e1f9",
         dark1:"#0d152d",
         dark2:"#142044",
-        darkshadow:"#1a2a5a"
+        darkshadow:"#142044"
       }
     },
      

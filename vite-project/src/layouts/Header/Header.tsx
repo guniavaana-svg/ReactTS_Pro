@@ -1,5 +1,5 @@
 import  "./Header.css";
-import Nav from "../../Components/Nav/Nav.tsx";
+import Nav from "../../Components/Nav.tsx";
 import LogIn from "../../Pages/LogIn/LogIn.tsx";
 import Registration from "../../Pages/Registration/Registration.tsx";
 import { TiAdjustContrast} from "react-icons/ti";
@@ -31,7 +31,7 @@ useEffect(()=>{
     }
 },[mode])
     return(<>
-    <header className="fixed  top-0 z-50  px-5 shadow-lg bg-[#d9e1f9] dark:text-[#b3c3f3] dark:bg-[#070b17] right-0 left-0">
+    <header className="fixed  top-0 z-50  px-5 shadow-2xl bg-[#d9e1f9] dark:text-[#b3c3f3] dark:bg-[#070b17] dark:shadow-darkshadow right-0 left-0">
         <div className="container max-w-[1400px] mx-auto">
              <div className="flex gap-2 items-center justify-center">
             <button className="flex items-center justify-start gap-1 px-2 py-1 rounded-[10px] bg-[#c6d2f6] w-1/5 border-none">

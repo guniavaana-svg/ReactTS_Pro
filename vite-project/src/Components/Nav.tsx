@@ -1,6 +1,5 @@
-import "./Nav.css";
 import { NavLink} from "react-router-dom";
-import { API_URL } from "../../../config";
+import { API_URL } from "../../config";
 import { useEffect,useState } from "react";
 interface Menu{
     id:number;

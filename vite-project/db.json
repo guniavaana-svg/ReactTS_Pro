@@ -21,52 +21,47 @@
   ],
   "menu": [
     {
-      "id": 1,
-      "path": "/",
-      "name": "მთავარი გვერდი"
-    },
-    {
       "id": 2,
-      "path": "papier",
-      "name": "ქაღალდი"
-    },
-    {
-      "id": 3,
       "path": "Stationery",
       "name": "საკანცელარიო ნივთები"
     },
     {
-      "id": 4,
-      "path": "Notebooks&Diaries",
-      "name": "რვეულები და დღიურები"
+      "id": 3,
+      "path": "Diaries&plenners",
+      "name": "დღიურები და წიგნაკები"
     },
     {
-      "id": 9,
+      "id": 4,
       "path": "giftcards",
       "name": "მისალოცი ბარათები"
     },
     {
       "id": 5,
-      "path": "Art_Supplies",
-      "name": "სამხატვრო მასალები"
-    },
-    {
-      "id": 6,
       "path": "books",
       "name": "წიგნები"
     },
     {
-      "id": 7,
+      "id": 6,
       "path": "/journals",
       "name": "ჟურნალ-გაზეთები"
     },
     {
-      "id": 8,
+      "id": 7,
       "path": "printing",
       "name": "ბეჭდვა"
+    },
+     {
+      "id": 8,
+      "path": "delivery",
+      "name": "მიწოდება"
+    },
+     {
+      "id": 9,
+      "path": "contact",
+      "name": "საკონტაქტო"
     }
   ],
-  "products": [
+  "stationery": [
     {
       "id": 1,
       "name": "Moleskine კლასიკური ნოუთბუქი A5 — შავი",

@@ -1,4 +1,3 @@
-import "./SearchForm.css";
 import { FaSearch } from "react-icons/fa";
 
 function SearchForm() {
