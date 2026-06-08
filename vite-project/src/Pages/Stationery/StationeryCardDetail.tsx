@@ -2,7 +2,7 @@ import "./Stationery.css"
 import type {StationeryDataType} from "../../dataType.ts"
 import { IoCartOutline } from "react-icons/io5"
 import { FaTimes } from "react-icons/fa";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineRight, AiOutlineDown } from "react-icons/ai";
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router";
 import { API_URL } from "../../../config.ts";
@@ -13,6 +13,7 @@ function StationeryCardDetail(){
     const [imgSrcIndex, setimgSrcIndex] = useState<number>(0);
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const length: number=stationeryData?.images?.length ?? 0;
+    const [section, setSection]=useState<string>("")
     const{id}=useParams();
     useEffect(() => {
         async function getStationeryData() {
@@ -24,7 +25,7 @@ function StationeryCardDetail(){
   }, []);
     return(
         <section className="sectionCardDEtail flex gap-2">
-            <div className="w-2/5 px-5 overflow-hidden">
+            <div className="w-3/5 px-5 overflow-hidden">
                 <div onClick={()=>setIsOpen(true)} className="h-[50dvh] rounded-xl shadow-lg dark:shadow-darkshadow dark:shadow-lg overflow-hidden cursor-pointer">
                     <img className="w-full h-full object-cover" src={imgSrc ||stationeryData?.thumbnail} alt={stationeryData?.name} />
                 </div>  
@@ -51,23 +52,24 @@ function StationeryCardDetail(){
                     </div>
                 </div>
             </div>}
-            <div className="detailbox w-3/5 px-5">
+            <div className="detailbox w-2/5 px-5 flex flex-col gap-3">
                 <h2 className="text-xl pb-3">{stationeryData?.name}</h2>
-                <span className="uppercase">{stationeryData?.brand}</span>
-                <span className="">{stationeryData?.price}{stationeryData?.currency}</span>
-               <d iv>
-                <input type="number" name="quantity" />
+                <span className="btnText uppercase">{stationeryData?.brand}</span>
+                <p className="flex items-center justify-start gap-2"><span className="btnText">ფასი:</span><span className="text-btnDark font-extrabold text-xl">{stationeryData?.price}{stationeryData?.currency}</span></p>
+               <div className="btn justify-start bg-light2">
+                <label className="btnText">რაოდენობა</label>
+                <input type="number" className="ml-auto inputBtn" name="quantity"/>
                </div>
-               <button>
-                <IoCartOutline/>
-                <span>კალათაში დამატება</span>
+               <button className="btn bg-btnLight dark:bg-btnDark text-light2 ">
+                <IoCartOutline className="w-[20px] h-[20px]"/>
+                <span className="btnText py-2">კალათაში დამატება</span>
                </button>
                <div>
-                <h3>აღწერილობა</h3>
-                <p>{stationeryData?.description}</p>
-                <h3>ზომები</h3>
+                <h3><span className="btnText mr-auto">აღწერილობა</span> <AiOutlineDown onClick={()=>{setSection("dec")}} className="w-[20px] h-[20px]"/></h3>
+                <p className={`info ${section==="dec"? "hidden" : "flex"}`}>{stationeryData?.description}</p>
+                <h3><span className="btnText mr-auto">ზომები</span> <AiOutlineDown onClick={()=>setSection("size")} className="w-[20px] h-[20px]"/></h3>
                 {stationeryData?.specifications.map((item, index)=>(
-                    <ul key={index}>
+                    <ul className={`info ${section==="dec"? "hidden" : "flex"}`} key={index}>
                         <li>ზომა: {item.size}</li>
                         <li>ფურცელი: {item.pages}</li>
                         <li>ყდა: {item.cover}</li>
@@ -76,8 +78,8 @@ function StationeryCardDetail(){
                         <li>წონა:{item.paperWeight}</li>
                     </ul>
                 ))}
-                <h3>მიწოდების პირობები და ვადები</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id deserunt voluptates fuga explicabo, magnam illum recusandae rem beatae deleniti, laudantium labore, minima vel enim! Veniam, ea voluptatibus. Sequi, error perferendis.</p>
+                <h3><span className="btnText mr-auto">მიწოდების პირობები და ვადები</span> <AiOutlineDown onClick={()=>setSection("delivery")} className="w-[20px] h-[20px]"/></h3>
+                <p className={`info ${section==="dec"? "hidden" : "flex"}`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id deserunt voluptates fuga explicabo, magnam illum recusandae rem beatae deleniti, laudantium labore, minima vel enim! Veniam, ea voluptatibus. Sequi, error perferendis.</p>
                </div>
             </div>
         </section>

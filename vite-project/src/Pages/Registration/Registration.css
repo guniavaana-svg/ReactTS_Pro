@@ -5,5 +5,5 @@
     @apply text-red-500 text-sm mt-1;
 }
 label{
-    @apply block text-[#142044] font-medium my-2;
+    @apply block text-[#142044] font-medium my-2 dark:text-dark2;
 }
