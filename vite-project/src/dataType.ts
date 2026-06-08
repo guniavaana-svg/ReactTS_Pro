@@ -18,7 +18,7 @@ export interface StationeryDataType{
   tags?: string[];
   thumbnail?: string;
   images?: string[];
-  specifications?: Specification[];
+  specifications: Specification[];
 }
 interface Specification {
   size?: string;

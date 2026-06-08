@@ -1,0 +1,17 @@
+.icon{
+    @apply w-[25px] h-[25px];
+}
+.xBtn, .leftBtn, .RightBtn{
+    @apply absolute  p-2 text-btnLight dark:text-light2 flex justify-center items-center ;
+}
+.xBtn{
+    @apply top-0 right-0
+}
+
+.leftBtn, .RightBtn{
+    @apply top-[50%] -translate-y-1/2 bg-light2  dark:bg-btnDark rounded-full shadow-lg
+}
+.leftBtn{}
+.RightBtn{
+    @apply translate-x-1/2
+}
