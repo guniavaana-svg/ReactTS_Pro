@@ -26,7 +26,7 @@ function StationeryCardDetail(){
     return(
         <section className="sectionCardDEtail flex gap-2">
             <div className="w-3/5 px-5 overflow-hidden">
-                <div onClick={()=>setIsOpen(true)} className="h-[50dvh] rounded-xl shadow-lg dark:shadow-darkshadow dark:shadow-lg overflow-hidden cursor-pointer">
+                <div onClick={()=>setIsOpen(true)} className="h-[60vh] rounded-xl shadow-lg dark:shadow-darkshadow dark:shadow-lg overflow-hidden cursor-pointer">
                     <img className="w-full h-full object-cover" src={imgSrc ||stationeryData?.thumbnail} alt={stationeryData?.name} />
                 </div>  
                 <div className="flex gap-2 justify-center pt-5">
@@ -65,11 +65,11 @@ function StationeryCardDetail(){
                 <span className="btnText py-2">კალათაში დამატება</span>
                </button>
                <div>
-                <h3><span className="btnText mr-auto">აღწერილობა</span> <AiOutlineDown onClick={()=>{setSection("dec")}} className="w-[20px] h-[20px]"/></h3>
-                <p className={`info ${section==="dec"? "hidden" : "flex"}`}>{stationeryData?.description}</p>
-                <h3><span className="btnText mr-auto">ზომები</span> <AiOutlineDown onClick={()=>setSection("size")} className="w-[20px] h-[20px]"/></h3>
-                {stationeryData?.specifications.map((item, index)=>(
-                    <ul className={`info ${section==="dec"? "hidden" : "flex"}`} key={index}>
+                <h3 onClick={()=>{setSection(prev=>prev==="dec"?"":"dec")}}><span className="btnText mr-auto">აღწერილობა</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="dec" && "rotate-180"} `}/></h3>
+                {section==="dec" && <p className="info">{stationeryData?.description}</p>}
+                <h3 onClick={()=>setSection(prev=>prev==="size"?"":"size")}><span className="btnText mr-auto">ზომები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="size" && "rotate-180"} `}/></h3>
+                {section==="size" && stationeryData?.specifications.map((item, index)=>(
+                  <ul className="info" key={index}>
                         <li>ზომა: {item.size}</li>
                         <li>ფურცელი: {item.pages}</li>
                         <li>ყდა: {item.cover}</li>
@@ -78,8 +78,8 @@ function StationeryCardDetail(){
                         <li>წონა:{item.paperWeight}</li>
                     </ul>
                 ))}
-                <h3><span className="btnText mr-auto">მიწოდების პირობები და ვადები</span> <AiOutlineDown onClick={()=>setSection("delivery")} className="w-[20px] h-[20px]"/></h3>
-                <p className={`info ${section==="dec"? "hidden" : "flex"}`}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id deserunt voluptates fuga explicabo, magnam illum recusandae rem beatae deleniti, laudantium labore, minima vel enim! Veniam, ea voluptatibus. Sequi, error perferendis.</p>
+                <h3 onClick={()=>setSection(prev=>prev==="delivery"?"":"delivery")}><span className="btnText mr-auto">მიწოდების პირობები და ვადები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="delivery" && "rotate-180"} `}/></h3>
+                {section==="delivery" && <p className="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id deserunt voluptates fuga explicabo, magnam illum recusandae rem beatae deleniti, laudantium labore, minima vel enim! Veniam, ea voluptatibus. Sequi, error perferendis.</p>}
                </div>
             </div>
         </section>

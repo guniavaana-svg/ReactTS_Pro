@@ -8,8 +8,11 @@ import { FiSearch } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";
 import { NavLink} from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import type { boolean } from "yup";
 function Header(){
+    const{id}=useParams();
+    console.log(id)
     const newMode:string|null=localStorage.getItem("mode");//ჯერ მომაქ ლოკალ სთორიჯიდან იმფო
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [scrolled, setScrolled] = useState<number>(0);
@@ -42,7 +45,7 @@ useEffect(()=>{
                 <div className="logo overflow-hidden flex justify-content-center align-items-center w-[100px]">
                     <img src="../../../public/faicon.png" alt="logo" className="w-full h-full object-contain"/>
                 </div>
-                <span className={`${ (scrolled > 50 ) ? "hidden" : "block "} text-[#4169E1] text-[24px] font-unicode font-medium`}>წერო</span>
+                {id==undefined && <span className={`${ (scrolled > 50 ) ? "hidden" : "block "} text-[#4169E1] text-[24px] font-unicode font-medium`}>წერო</span>}
             </div>
             <div className="flex items-center justify-center bg-[#3454b4] text-[#ecf0fc] dark:bg-[#033AA8] px-2 py-1 rounded-[10px]">
                 <button onClick={()=>setIsOpen(true)} className="font-mtavruli leading-none flex items-center p-1 h-[20px] gap-2 ">

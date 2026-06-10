@@ -21,7 +21,7 @@
     @apply translate-y-[2px] font-mtavruli text-xl;
 }
 .sectionCardDEtail h3{
-    @apply flex justify-start items-center bg-light2 p-2 text-start rounded-xl mb-3
+    @apply flex justify-start items-center bg-light2 dark:text-dark1 p-2 text-start rounded-xl mb-3
 }
 /* .sectionCardDEtail .info{
     @apply hidden
