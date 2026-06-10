@@ -18,6 +18,7 @@ export default {
         btnDark:"#033AA8",
         light1:"#ecf0fc",
         light2:"#d9e1f9",
+        light3:"#c6d2f6",
         dark1:"#0d152d",
         dark2:"#142044",
         darkshadow:"#142044"

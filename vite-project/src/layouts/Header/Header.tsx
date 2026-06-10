@@ -3,16 +3,15 @@ import Nav from "../../Components/Nav.tsx";
 import LogIn from "../../Pages/LogIn/LogIn.tsx";
 import Registration from "../../Pages/Registration/Registration.tsx";
 import { TiAdjustContrast} from "react-icons/ti";
-import { FiUser } from "react-icons/fi";
-import { FiSearch } from "react-icons/fi";
+import { FiUser,FiSearch } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";
 import { NavLink} from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import type { boolean } from "yup";
+import Favorite from "../../Components/Favorite.tsx";
 function Header(){
     const{id}=useParams();
-    console.log(id)
     const newMode:string|null=localStorage.getItem("mode");//ჯერ მომაქ ლოკალ სთორიჯიდან იმფო
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [scrolled, setScrolled] = useState<number>(0);
@@ -66,6 +65,7 @@ useEffect(()=>{
                     </div>
                 )}
             </div>
+            <Favorite/>
             <button onClick={()=>setMode((pre)=>pre==="light" ? "dark" : "light")} className="darkMode">
                 <TiAdjustContrast className="text-btnLight dark:text-btnDark w-[35px] h-[35px] dark:rotate-180"/>
             </button>

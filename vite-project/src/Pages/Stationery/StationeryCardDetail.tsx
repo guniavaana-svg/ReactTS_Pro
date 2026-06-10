@@ -2,11 +2,13 @@ import "./Stationery.css"
 import type {StationeryDataType} from "../../dataType.ts"
 import { IoCartOutline } from "react-icons/io5"
 import { FaTimes } from "react-icons/fa";
-import { AiOutlineLeft, AiOutlineRight, AiOutlineDown } from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineRight, AiOutlineDown} from "react-icons/ai";
+import { CiHeart } from "react-icons/ci";
 import { useState, useEffect, useRef } from "react";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 import { useParams } from "react-router";
 import { API_URL } from "../../../config.ts";
-import { DiVim } from "react-icons/di";
 function StationeryCardDetail(){
     const [stationeryData, setStationeryData] = useState<StationeryDataType>();
     const [imgSrc, setimgSrc] = useState<string>("");
@@ -23,6 +25,18 @@ function StationeryCardDetail(){
         }
     getStationeryData();
   }, []);
+///////////////////////////////////////////////////////
+    const validate = Yup.object().shape({
+    quantity:Yup.string().required("შეიყვანე რაოდენობა")
+  })
+    function addToChart(values:{quantity:string}) {
+        const productQuantity:number=Number(values.quantity);
+        console.log(productQuantity)
+    }
+///////////////////////////////////////////////////////////
+    function addToFav(){
+        console.log(id)
+    }
     return(
         <section className="sectionCardDEtail flex gap-2">
             <div className="w-3/5 px-5 overflow-hidden">
@@ -52,18 +66,28 @@ function StationeryCardDetail(){
                     </div>
                 </div>
             </div>}
-            <div className="detailbox w-2/5 px-5 flex flex-col gap-3">
+            <div className="relative detailbox w-2/5 px-5 flex flex-col gap-3">
+                <button onClick={addToFav} className="absolute right-0 top-0 border-none">
+                    <CiHeart className="icon"/>
+                </button>
                 <h2 className="text-xl pb-3">{stationeryData?.name}</h2>
                 <span className="btnText uppercase">{stationeryData?.brand}</span>
                 <p className="flex items-center justify-start gap-2"><span className="btnText">ფასი:</span><span className="text-btnDark font-extrabold text-xl">{stationeryData?.price}{stationeryData?.currency}</span></p>
-               <div className="btn justify-start bg-light2">
-                <label className="btnText">რაოდენობა</label>
-                <input type="number" className="ml-auto inputBtn" name="quantity"/>
-               </div>
-               <button className="btn bg-btnLight dark:bg-btnDark text-light2 ">
-                <IoCartOutline className="w-[20px] h-[20px]"/>
-                <span className="btnText py-2">კალათაში დამატება</span>
-               </button>
+               <Formik initialValues={{
+                quantity:"1",
+               }} validationSchema={validate} onSubmit={addToChart}>
+                    <Form  className="flex flex-col gap-3">
+                        <div className="btn justify-start bg-light2">
+                            <label className="btnText">რაოდენობა</label>
+                            <Field type="number" placeholder="" className="ml-auto inputBtn text-center" name="quantity" min="1" max="999"/>
+                            <ErrorMessage name="quantity" component="span" className="error" />
+                        </div>
+                        <button type="submit" className="btn bg-btnLight dark:bg-btnDark text-light2 ">
+                            <IoCartOutline className="w-[20px] h-[20px]"/>
+                            <span className="btnText py-2">კალათაში დამატება</span>
+                        </button>
+                    </Form>  
+               </Formik>
                <div>
                 <h3 onClick={()=>{setSection(prev=>prev==="dec"?"":"dec")}}><span className="btnText mr-auto">აღწერილობა</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="dec" && "rotate-180"} `}/></h3>
                 {section==="dec" && <p className="info">{stationeryData?.description}</p>}
