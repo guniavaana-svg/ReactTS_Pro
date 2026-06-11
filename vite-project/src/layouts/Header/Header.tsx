@@ -36,16 +36,16 @@ useEffect(()=>{
     <header className="fixed  top-0 z-50  px-5 shadow-2xl bg-[#d9e1f9] dark:text-[#b3c3f3] dark:bg-[#070b17] dark:shadow-darkshadow right-0 left-0">
         <div className="container max-w-[1400px] mx-auto">
              <div className="flex gap-2 items-center justify-center">
-            <button className="flex items-center justify-start gap-1 px-2 py-1 rounded-[10px] bg-[#c6d2f6] w-1/5 border-none">
-                <FiSearch className="text-[#142044]"/>
-                <span className="text-[#0D152D]">ძიება</span>
-            </button>
-            <div className=" flex justify-center items-center flex-col mx-auto translate-x-[50%] w-[100px]">
-                <div className="logo overflow-hidden flex justify-content-center align-items-center w-[100px]">
-                    <img src="../../../public/faicon.png" alt="logo" className="w-full h-full object-contain"/>
+                <button className="flex items-center justify-start gap-1 px-2 py-1 rounded-[10px] bg-[#c6d2f6] w-1/5 border-none">
+                    <FiSearch className="text-[#142044]"/>
+                    <span className="text-[#0D152D]">ძიება</span>
+                </button>
+                <div className=" flex justify-center items-center flex-col mx-auto translate-x-[50%] w-[100px]">
+                    <div className="logo overflow-hidden flex justify-content-center align-items-center w-[100px]">
+                        <img src="../../../public/faicon.png" alt="logo" className="w-full h-full object-contain"/>
+                    </div>
+                    {id==undefined && <span className={`${ (scrolled > 50 ) ? "hidden" : "block "} text-[#4169E1] text-[24px] font-unicode font-medium`}>წერო</span>}
                 </div>
-                {id==undefined && <span className={`${ (scrolled > 50 ) ? "hidden" : "block "} text-[#4169E1] text-[24px] font-unicode font-medium`}>წერო</span>}
-            </div>
             <div className="flex items-center justify-center bg-[#3454b4] text-[#ecf0fc] dark:bg-[#033AA8] px-2 py-1 rounded-[10px]">
                 <button onClick={()=>setIsOpen(true)} className="font-mtavruli leading-none flex items-center p-1 h-[20px] gap-2 ">
                     <FiUser className="text-[#ecf0fc] w-[20px]  h-[20px]"/>

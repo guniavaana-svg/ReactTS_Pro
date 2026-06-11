@@ -4,12 +4,14 @@ import { IoCartOutline } from "react-icons/io5"
 import { FaTimes } from "react-icons/fa";
 import { AiOutlineLeft, AiOutlineRight, AiOutlineDown} from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useParams } from "react-router";
 import { API_URL } from "../../../config.ts";
+import  { FavoriteContext, useFavorite } from "../../FavoriteContext.tsx";
 function StationeryCardDetail(){
+    const {setFavId}=useFavorite()
     const [stationeryData, setStationeryData] = useState<StationeryDataType>();
     const [imgSrc, setimgSrc] = useState<string>("");
     const [imgSrcIndex, setimgSrcIndex] = useState<number>(0);
@@ -34,9 +36,7 @@ function StationeryCardDetail(){
         console.log(productQuantity)
     }
 ///////////////////////////////////////////////////////////
-    function addToFav(){
-        console.log(id)
-    }
+   
     return(
         <section className="sectionCardDEtail flex gap-2">
             <div className="w-3/5 px-5 overflow-hidden">
@@ -67,7 +67,9 @@ function StationeryCardDetail(){
                 </div>
             </div>}
             <div className="relative detailbox w-2/5 px-5 flex flex-col gap-3">
-                <button onClick={addToFav} className="absolute right-0 top-0 border-none">
+                <button onClick={()=>{
+                   setFavId(Number(id))
+                }} className="absolute right-0 top-0 border-none">
                     <CiHeart className="icon"/>
                 </button>
                 <h2 className="text-xl pb-3">{stationeryData?.name}</h2>
