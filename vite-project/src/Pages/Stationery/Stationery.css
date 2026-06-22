@@ -2,7 +2,7 @@
     @apply w-[25px] h-[25px];
 }
 .sectionCardDEtail .favIcon, .productItem .favIcon{
-    @apply absolute top-0 right-0 -translate-x-1/2 translate-y-1/2 hover:scale-125 transition duration-300 ease-in-out border-none;
+    @apply absolute top-0 right-0 -translate-x-1/2 translate-y-1/2 hover:scale-125   transition duration-300 ease-in-out border-none;
 }
 .sectionCardDEtail .xBtn, .sectionCardDEtail .leftBtn, .sectionCardDEtail .RightBtn{
     @apply absolute  p-2 text-btnLight dark:text-light2 flex justify-center items-center ;

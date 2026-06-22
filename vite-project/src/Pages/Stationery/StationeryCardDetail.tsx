@@ -4,6 +4,7 @@ import { IoCartOutline } from "react-icons/io5"
 import { FaTimes } from "react-icons/fa";
 import { AiOutlineLeft, AiOutlineRight, AiOutlineDown} from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useState, useEffect, useRef, useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
