@@ -16,7 +16,7 @@ export default function FavoriteProvider({children}){
      },[FavId,FavListId])
 
   return(
-    <FavoriteContext.Provider value={{setFavId, FavId}}  >
+    <FavoriteContext.Provider value={{setFavId, FavId}}>
       {children}
     </FavoriteContext.Provider>
   )

@@ -36,9 +36,9 @@ function StationeryCardDetail(){
         console.log(productQuantity)
     }
 ///////////////////////////////////////////////////////////
-   
     return(
         <section className="sectionCardDEtail flex gap-2">
+            {/* //////////img Box///////// */}
             <div className="w-3/5 px-5 overflow-hidden">
                 <div onClick={()=>setIsOpen(true)} className="h-[60vh] rounded-xl shadow-lg dark:shadow-darkshadow dark:shadow-lg overflow-hidden cursor-pointer">
                     <img className="w-full h-full object-cover" src={imgSrc ||stationeryData?.thumbnail} alt={stationeryData?.name} />
@@ -65,14 +65,16 @@ function StationeryCardDetail(){
                         <img className="w-full h-full object-contain" src={stationeryData?.images?.[imgSrcIndex ?? 0] ||stationeryData?.thumbnail} alt={stationeryData?.name} />
                     </div>
                 </div>
-            </div>}
+            </div>
+            }
+            {/*//////////////// details Box/////////////// */}
             <div className="relative detailbox w-2/5 px-5 flex flex-col gap-3">
                 <button onClick={()=>{
                    setFavId(Number(id))
-                }} className="absolute right-0 top-0 border-none">
+                }} className="favIcon">
                     <CiHeart className="icon"/>
                 </button>
-                <h2 className="text-xl pb-3">{stationeryData?.name}</h2>
+                <h2 className="text-xl py-3">{stationeryData?.name}</h2>
                 <span className="btnText uppercase">{stationeryData?.brand}</span>
                 <p className="flex items-center justify-start gap-2"><span className="btnText">ფასი:</span><span className="text-btnDark font-extrabold text-xl">{stationeryData?.price}{stationeryData?.currency}</span></p>
                <Formik initialValues={{

@@ -1,18 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FavoriteContext } from "../FavoriteContext";
-
-
-
 function Favorite(){
     const {FavId}=useContext(FavoriteContext)
-    const [FavListId, setFavListId]=useState<number[]>([])
-    useEffect(()=>{
-        if (FavId==undefined) return;
-        localStorage.setItem("FavListId",JSON.stringify(FavListId))
-        setFavListId(prev=>(FavListId.includes(FavId)?prev:[...prev,FavId]))
-        console.log(FavListId, JSON.stringify(localStorage.getItem("FavListId")))
-    },[FavId])
     // console.log(FavListId, FavId)
     return(
     <>
