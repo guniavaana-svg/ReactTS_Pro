@@ -10,9 +10,12 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useParams } from "react-router";
 import { API_URL } from "../../../config.ts";
-import  { FavoriteContext, useFavorite } from "../../FavoriteContext.tsx";
+import { useStateDispatch } from "../../state/hooks.ts";
+import { addFavItem } from "../../state/favorite/favoriteSlice.ts";
+// import  { FavoriteContext, useFavorite } from "../../FavoriteContext.tsx";
 function StationeryCardDetail(){
-    const {setFavId}=useFavorite()
+    // const {setFavId}=useFavorite()
+    const dispatch=useStateDispatch();
     const [stationeryData, setStationeryData] = useState<StationeryDataType>();
     const [imgSrc, setimgSrc] = useState<string>("");
     const [imgSrcIndex, setimgSrcIndex] = useState<number>(0);
@@ -71,7 +74,7 @@ function StationeryCardDetail(){
             {/*//////////////// details Box/////////////// */}
             <div className="relative detailbox w-2/5 px-5 flex flex-col gap-3">
                 <button onClick={()=>{
-                   setFavId(Number(id))
+                   dispatch(addFavItem(Number(id)))
                 }} className="favIcon">
                     <CiHeart className="icon"/>
                 </button>

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { favoriteReducer } from "./favorite/favoriteSlice";
+import favoriteReducer from "./favorite/favoriteSlice";
 export const store=configureStore({
     reducer:{
         //აქ ვწერთ სხვადასხვა slice ანუ reducers
@@ -11,3 +11,4 @@ export const store=configureStore({
 export type RootState=ReturnType<typeof store.getState>;
 //dispatch იც არის პუნქცია რომლის ტიპსაც ვინახავთ AppDispatch-ში
 export type AppDispatch= typeof store.dispatch;
+export type AppStore = typeof store;
