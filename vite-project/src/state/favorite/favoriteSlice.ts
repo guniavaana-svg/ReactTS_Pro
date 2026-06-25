@@ -1,11 +1,11 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 interface FavoriteState{
-    value:number[];
+    favItemIdList:number[]
 }
 const LocalItemId=localStorage.getItem("favList")
 
 const initialState:FavoriteState={
-    value:LocalItemId?JSON.parse(LocalItemId):[] //default value
+    favItemIdList:LocalItemId?JSON.parse(LocalItemId):[] //default value
 }
 //state
 const favoriteSlice=createSlice({
@@ -15,17 +15,21 @@ const favoriteSlice=createSlice({
     reducers:{
 //action
         addFavItem:(state, action:PayloadAction<number>)=>{
-            if(state.value.includes(action.payload)===false){
-                state.value.push(action.payload);
-                localStorage.setItem("favList",JSON.stringify(state.value))
+            if(state.favItemIdList.includes(action.payload)===false){
+                state.favItemIdList.push(action.payload);
+                localStorage.setItem("favList",JSON.stringify(state.favItemIdList))
             }
         },
-        removeFavItem:(state)=>{
-          
+        removeFavItem:(state, action:PayloadAction<number>)=>{
+            if(state.favItemIdList.includes(action.payload)===true){
+                const deleteIdIndex:number=state.favItemIdList.indexOf(action.payload)
+                state.favItemIdList.splice(deleteIdIndex,1)
+                console.log(state.favItemIdList)
+            }
         },
         clearAllFavItem:(state)=>{
             localStorage.removeItem("favList")
-            state.value=[]
+            state.favItemIdList=[]
         }
     }
 })

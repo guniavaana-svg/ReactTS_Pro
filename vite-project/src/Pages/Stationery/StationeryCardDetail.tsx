@@ -10,19 +10,22 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useParams } from "react-router";
 import { API_URL } from "../../../config.ts";
-import { useStateDispatch } from "../../state/hooks.ts";
-import { addFavItem } from "../../state/favorite/favoriteSlice.ts";
+import { useStateDispatch, useStateSelector } from "../../state/hooks.ts";
+import { addFavItem, removeFavItem } from "../../state/favorite/favoriteSlice.ts";
+import type { RootState } from "../../state/store.ts";
 // import  { FavoriteContext, useFavorite } from "../../FavoriteContext.tsx";
 function StationeryCardDetail(){
+    const{id}=useParams();
     // const {setFavId}=useFavorite()
     const dispatch=useStateDispatch();
+    const favItemId=useStateSelector((state: RootState)=>state.favorite.favItemIdList);
+    const [isClicked, setIsClicked] = useState<boolean>(favItemId.includes(Number(id)));
     const [stationeryData, setStationeryData] = useState<StationeryDataType>();
     const [imgSrc, setimgSrc] = useState<string>("");
     const [imgSrcIndex, setimgSrcIndex] = useState<number>(0);
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const length: number=stationeryData?.images?.length ?? 0;
-    const [section, setSection]=useState<string>("")
-    const{id}=useParams();
+    const [section, setSection]=useState<string>("");
     useEffect(() => {
         async function getStationeryData() {
             const response = await fetch(`${API_URL}/stationery/${id}`);
@@ -31,6 +34,13 @@ function StationeryCardDetail(){
         }
     getStationeryData();
   }, []);
+  useEffect(()=>{
+    if(isClicked===true){
+        dispatch(addFavItem(Number(id)))
+    }else{
+        dispatch(removeFavItem(Number(id)))
+    }
+  },[isClicked])
 ///////////////////////////////////////////////////////
     const validate = Yup.object().shape({
     quantity:Yup.string().required("შეიყვანე რაოდენობა")
@@ -74,9 +84,11 @@ function StationeryCardDetail(){
             {/*//////////////// details Box/////////////// */}
             <div className="relative detailbox w-2/5 px-5 flex flex-col gap-3">
                 <button onClick={()=>{
-                   dispatch(addFavItem(Number(id)))
-                }} className="favIcon">
-                    <CiHeart className="icon"/>
+                    isClicked===false?setIsClicked(true):setIsClicked(false)
+                    // dispatch(addFavItem(Number(id)))
+                }} className="favIcon relative ">
+                    <FaRegHeart className="icon fill-btnLight"/>
+                  {isClicked && <FaHeart className="icon absolute inset-0 fill-btnLight "/>} 
                 </button>
                 <h2 className="text-xl py-3">{stationeryData?.name}</h2>
                 <span className="btnText uppercase">{stationeryData?.brand}</span>
