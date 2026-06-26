@@ -90,7 +90,7 @@ function StationeryCardDetail(){
                     <FaRegHeart className="icon fill-btnLight"/>
                   {isClicked && <FaHeart className="icon absolute inset-0 fill-btnLight "/>} 
                 </button>
-                <h2 className="text-xl py-3">{stationeryData?.name}</h2>
+                <h2 className="text-xl py-3 text-ellipsis whitespace-nowrap">{stationeryData?.name}</h2>
                 <span className="btnText uppercase">{stationeryData?.brand}</span>
                 <p className="flex items-center justify-start gap-2"><span className="btnText">ფასი:</span><span className="text-btnDark font-extrabold text-xl">{stationeryData?.price}{stationeryData?.currency}</span></p>
                <Formik initialValues={{

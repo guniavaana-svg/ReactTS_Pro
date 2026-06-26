@@ -55,10 +55,10 @@ useEffect(()=>{
                     <div onClick={()=>setIsOpen(false)} className="fixed inset-0 z-50 flex items-center justify-center bg-[#0d152d] bg-opacity-50 dark:bg-opacity-80 dark:bg-darkshadow">
                         <div  onClick={(e) => e.stopPropagation()} className="relative w-11/12 max-w-4xl max-h-[95vh]  rounded shadow-lg flex text-light2">
                             <button className="absolute top-0 right-0 p-2 text-btnLight dark:text-light2"  onClick={()=>setIsOpen(false)}><FaTimes className="w-[25px] h-[25px]"/></button>
-                            <div className="w-1/2 p-8 bg-light1 dark:bg-dark1 overflow-scroll scrollbar-hide">
+                            <div className="w-1/2 p-8 bg-light1 dark:bg-dark1 overflow-y-scroll scrollbar-thin scrollbar-thumb-light3 hover:scrollbar-thumb-btnDark scrollbar-track-light1">
                                 <LogIn/>
                             </div>
-                            <div className="w-1/2 p-8 bg-light2 dark:bg-dark2 overflow-scroll scrollbar-hide">
+                            <div className="w-1/2 p-8 bg-light2 dark:bg-dark2 overflow-y-scroll scrollbar-thin scrollbar-thumb-light1 hover:scrollbar-thumb-btnDark scrollbar-track-light2">
                                 <Registration/>
                             </div>
                         </div>   
