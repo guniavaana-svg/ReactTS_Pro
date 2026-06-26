@@ -66,7 +66,7 @@ function StationeryCardDetail(){
                 </div>
             </div>
             {isOpen && 
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0d152d] bg-opacity-50 dark:bg-opacity-80 dark:bg-darkshadow">
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-dark1 bg-opacity-50 dark:bg-opacity-80 dark:bg-darkshadow">
                 <div className="relative w-11/12  max-w-[90vw] h-[90vh]  rounded-lg shadow-lg dark:shadow-darkshadow  p-8 bg-light1 dark:bg-dark2 flex items-center justify-center">
                     <button onClick={()=>{setimgSrcIndex(prev=>prev>0?prev-1:length-1)}} className="leftBtn -translate-x-1/2 left-0">
                         <AiOutlineLeft className="icon"/>
@@ -109,9 +109,9 @@ function StationeryCardDetail(){
                     </Form>  
                </Formik>
                <div>
-                <h3 onClick={()=>{setSection(prev=>prev==="dec"?"":"dec")}}><span className="btnText mr-auto">აღწერილობა</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="dec" && "rotate-180"} `}/></h3>
+                <h3 onClick={()=>{setSection(prev=>prev==="dec"?"":"dec")}}><span className="btnText">აღწერილობა</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="dec" && "rotate-180"} `}/></h3>
                 {section==="dec" && <p className="info">{stationeryData?.description}</p>}
-                <h3 onClick={()=>setSection(prev=>prev==="size"?"":"size")}><span className="btnText mr-auto">ზომები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="size" && "rotate-180"} `}/></h3>
+                <h3 onClick={()=>setSection(prev=>prev==="size"?"":"size")}><span className="btnText">ზომები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="size" && "rotate-180"} `}/></h3>
                 {section==="size" && stationeryData?.specifications.map((item, index)=>(
                   <ul className="info" key={index}>
                         <li>ზომა: {item.size}</li>
@@ -122,7 +122,7 @@ function StationeryCardDetail(){
                         <li>წონა:{item.paperWeight}</li>
                     </ul>
                 ))}
-                <h3 onClick={()=>setSection(prev=>prev==="delivery"?"":"delivery")}><span className="btnText mr-auto">მიწოდების პირობები და ვადები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="delivery" && "rotate-180"} `}/></h3>
+                <h3 onClick={()=>setSection(prev=>prev==="delivery"?"":"delivery")}><span className="btnText">მიწოდების პირობები და ვადები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="delivery" && "rotate-180"} `}/></h3>
                 {section==="delivery" && <p className="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id deserunt voluptates fuga explicabo, magnam illum recusandae rem beatae deleniti, laudantium labore, minima vel enim! Veniam, ea voluptatibus. Sequi, error perferendis.</p>}
                </div>
             </div>

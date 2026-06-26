@@ -38,7 +38,7 @@ function Stationery(){
       <div className="heading"></div>
       <div className="products flex flex-wrap gap-4  justify-around  ">
         {productData.map((item)=>(
-          <div className="productItem max-w-[300px] rounded-xl shadow-lg dark:shadow-darkshadow dark:shadow-lg overflow-hidden " key={item.id}>
+          <div className="relative productItem max-w-[300px] rounded-xl shadow-lg dark:shadow-darkshadow dark:shadow-lg overflow-hidden " key={item.id}>
             <ProductCard  className="" id={`${item.id}`} name={item.name} price={item.price} currency={item.currency} thumbnail={item.thumbnail}/>
              <button onClick={()=>{setItemId(Number(item.id)); isClicked===false?setIsClicked(true):setIsClicked(false) }} className="favIcon absolute z-20 ">
                 <CiHeart className="icon text-btnLight"/>
