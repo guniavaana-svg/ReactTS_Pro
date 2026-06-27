@@ -11,7 +11,7 @@ interface productСardPropsType{
 function ProductCard(props:productСardPropsType){
     const {className, name, price, currency, thumbnail, id}=props
     return(
-    <div className={`relative flex flex-col ${className}`}>
+    <div className={`relative h-full flex flex-col ${className}`}>
         <div className="h-[300px] overflow-hidden">
             <img src={thumbnail} alt={thumbnail} className="w-full h-full object-cover" />
         </div> 

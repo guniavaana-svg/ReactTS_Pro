@@ -21,9 +21,10 @@ const favoriteSlice=createSlice({
             }
         },
         removeFavItem:(state, action:PayloadAction<number>)=>{
-            if(state.favItemIdList.includes(action.payload)===true){
+            if(state.favItemIdList.includes(action.payload)==true && state.favItemIdList.indexOf(action.payload)!=-1){
                 const deleteIdIndex:number=state.favItemIdList.indexOf(action.payload)
                 state.favItemIdList.splice(deleteIdIndex,1)
+                localStorage.setItem("favList",JSON.stringify(state.favItemIdList))
                 console.log(state.favItemIdList)
             }
         },

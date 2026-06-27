@@ -15,9 +15,8 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 function Stationery(){
   const favItemId=useStateSelector((state: RootState)=>state.favorite.favItemIdList);
   const dispatch=useStateDispatch();
-  const [itemId,setItemId]=useState<number>(-2)
-  const [isClicked,setIsClicked]=useState<boolean>(favItemId.includes(itemId))
   const[productData,setProductData]=useState<StationeryDataType[]>([])
+
   useEffect(()=>{
     async function getProductsData(){
       const rec=await fetch(`${API_URL}/stationery`)
@@ -26,13 +25,13 @@ function Stationery(){
     }
     getProductsData()
   },[])
-   useEffect(()=>{
-    if(isClicked===true){
-        dispatch(addFavItem(itemId))
+  function toggleFavItem(id:number):void{
+    if(favItemId.includes(id)){
+      dispatch(removeFavItem(id))
     }else{
-        dispatch(removeFavItem(itemId))
+      dispatch(addFavItem(id))
     }
-  },[isClicked])
+  }
   return(
     <div className="productSection">
       <div className="heading"></div>
@@ -40,10 +39,10 @@ function Stationery(){
         {productData.map((item)=>(
           <div className="relative productItem max-w-[300px] rounded-xl shadow-lg dark:shadow-darkshadow dark:shadow-lg overflow-hidden " key={item.id}>
             <ProductCard  className="" id={`${item.id}`} name={item.name} price={item.price} currency={item.currency} thumbnail={item.thumbnail}/>
-             <button onClick={()=>{setItemId(Number(item.id)); isClicked===false?setIsClicked(true):setIsClicked(false) }} className="favIcon absolute z-20 ">
+             <button onClick={()=>toggleFavItem(Number(item.id))} className="favIcon absolute z-20 ">
                 <CiHeart className="icon text-btnLight"/>
                 {/* <FaRegHeart className="icon fill-btnLight"/> */}
-                {isClicked && itemId==item.id && <FaHeart className="icon absolute inset-0 fill-btnLight "/>} 
+                {favItemId.includes(Number(item.id)) && <FaHeart className="icon absolute inset-0 fill-btnLight "/>} 
             </button>
           </div>
         ))}

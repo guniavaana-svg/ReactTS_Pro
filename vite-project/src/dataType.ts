@@ -1,5 +1,5 @@
 export interface StationeryDataType{
-  id?: number;
+  id: number;
   name?: string;
   description?: string;
   category?: string;

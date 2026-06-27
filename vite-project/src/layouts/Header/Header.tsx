@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import type { boolean } from "yup";
 import Favorite from "../../Components/Favorite.tsx";
+import Basket from "../../Components/basket.tsx";
 function Header(){
     const{id}=useParams();
     const newMode:string|null=localStorage.getItem("mode");//ჯერ მომაქ ლოკალ სთორიჯიდან იმფო
@@ -32,6 +33,13 @@ useEffect(()=>{
     document.documentElement.classList.remove("dark");
     }
 },[mode])
+// ///////////////ძიება////////////////
+// function searchData():void{
+//     productData.filter(item =>
+//   item.name.toLowerCase().includes(search.toLowerCase())
+// )
+// }
+
     return(<>
     <header className="fixed  top-0 z-50  px-5 shadow-2xl bg-[#d9e1f9] dark:text-[#b3c3f3] dark:bg-[#070b17] dark:shadow-darkshadow right-0 left-0">
         <div className="container max-w-[1400px] mx-auto">
@@ -46,9 +54,9 @@ useEffect(()=>{
                     </div>
                     {id==undefined && <span className={`${ (scrolled > 50 ) ? "hidden" : "block "} text-[#4169E1] text-[24px] font-unicode font-medium`}>წერო</span>}
                 </div>
-            <div className="flex items-center justify-center bg-[#3454b4] text-[#ecf0fc] dark:bg-[#033AA8] px-2 py-1 rounded-[10px]">
-                <button onClick={()=>setIsOpen(true)} className="font-mtavruli leading-none flex items-center p-1 h-[20px] gap-2 ">
-                    <FiUser className="text-[#ecf0fc] w-[20px]  h-[20px]"/>
+            <div className="flex items-center justify-center text-sm bg-[#3454b4] text-[#ecf0fc] dark:bg-[#033AA8] px-2 py-1 rounded-[10px]">
+                <button onClick={()=>setIsOpen(true)} className="font-mtavruli leading-none flex items-center p-1 h-[20px] gap-1 ">
+                    <FiUser className="text-[#ecf0fc] text-sm"/>
                     <span className="translate-y-[2px]">ავტორიზაცია</span>
                 </button>
                 {isOpen && (
@@ -66,9 +74,11 @@ useEffect(()=>{
                 )}
             </div>
             <Favorite/>
+            <Basket/>
             <button onClick={()=>setMode((pre)=>pre==="light" ? "dark" : "light")} className="darkMode">
                 <TiAdjustContrast className="text-btnLight dark:text-btnDark w-[35px] h-[35px] dark:rotate-180"/>
             </button>
+            
             </div>
             <div className="headerSection2 flex gap-2 items-center justify-center max-w-[1400px] mx-auto">
             <Nav/>

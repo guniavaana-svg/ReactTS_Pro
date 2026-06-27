@@ -1,5 +1,5 @@
 import type { RootState } from "../state/store.ts";
-import { CiHeart } from "react-icons/ci";
+import { BsBasket2Fill } from "react-icons/bs";
 import { useStateSelector, useStateDispatch } from "../state/hooks.ts";
 import {addFavItem, removeFavItem, clearAllFavItem} from "../state/favorite/favoriteSlice.ts"
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ import type { StationeryDataType } from "../dataType.ts";
 import ProductCard from "./ProductCard.tsx";
 // import { useContext, useEffect, useState } from "react";
 // import { FavoriteContext } from "../FavoriteContext";
-function Favorite(){
+function Basket(){
     // const {FavId}=useContext(FavoriteContext)
     // console.log(FavListId, FavId)
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -33,9 +33,9 @@ function Favorite(){
     console.log(favItemsId)
     return(
     <>
-        <button onClick={()=>setIsOpen(true)} className="border-none flex gab-2 justify-center items-center bg-light3 p-1 rounded-xl text-sm">
-            <CiHeart className="w-[20px]  h-[20px] text-btnLight dark:text-btnDark"/>
-            <span className="font-mtavruli translate-y-[2px]">რჩეულები</span>
+        <button onClick={()=>setIsOpen(true)} className="text-sm border-none flex gab-2 justify-center items-center bg-light3 p-1 rounded-xl gap-1">
+            <BsBasket2Fill className="text-btnLight dark:text-btnDark"/>
+            <span className="font-mtavruli translate-y-[2px]">კალათა</span>
         </button>
           {isOpen && 
         <div onClick={()=>setIsOpen(false)} className="fixed inset-0 z-50 flex items-center justify-end bg-dark1 bg-opacity-50 dark:bg-opacity-80 dark:bg-darkshadow">
@@ -60,4 +60,4 @@ function Favorite(){
     </>)
 }
  
-export default Favorite;
+export default Basket;
