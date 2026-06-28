@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import type { boolean } from "yup";
 import Favorite from "../../Components/Favorite.tsx";
-import Basket from "../../Components/basket.tsx";
+import Cart from "../../Components/Cart.tsx";
 function Header(){
     const{id}=useParams();
     const newMode:string|null=localStorage.getItem("mode");//ჯერ მომაქ ლოკალ სთორიჯიდან იმფო
@@ -74,7 +74,7 @@ useEffect(()=>{
                 )}
             </div>
             <Favorite/>
-            <Basket/>
+            <Cart/>
             <button onClick={()=>setMode((pre)=>pre==="light" ? "dark" : "light")} className="darkMode">
                 <TiAdjustContrast className="text-btnLight dark:text-btnDark w-[35px] h-[35px] dark:rotate-180"/>
             </button>

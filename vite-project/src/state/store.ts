@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import favoriteReducer from "./favorite/favoriteSlice";
+import favoriteReducer from "./StateSlices/favoriteSlice";
+import cartReducer from "./StateSlices/CartSlice";
 export const store=configureStore({
     reducer:{
         //აქ ვწერთ სხვადასხვა slice ანუ reducers
         favorite: favoriteReducer,
+        cart: cartReducer,
     }
 })
 //ტს ში საჭიროა ტიპის ექსპორტირებაც

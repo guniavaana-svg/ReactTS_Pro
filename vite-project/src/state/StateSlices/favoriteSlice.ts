@@ -21,18 +21,17 @@ const favoriteSlice=createSlice({
             }
         },
         removeFavItem:(state, action:PayloadAction<number>)=>{
-            if(state.favItemIdList.includes(action.payload)==true && state.favItemIdList.indexOf(action.payload)!=-1){
+            if(state.favItemIdList.includes(action.payload)===true && state.favItemIdList.indexOf(action.payload)!=-1){
                 const deleteIdIndex:number=state.favItemIdList.indexOf(action.payload)
                 state.favItemIdList.splice(deleteIdIndex,1)
                 localStorage.setItem("favList",JSON.stringify(state.favItemIdList))
-                console.log(state.favItemIdList)
             }
         },
-        clearAllFavItem:(state)=>{
+        clearAllFavItems:(state)=>{
             localStorage.removeItem("favList")
             state.favItemIdList=[]
         }
     }
 })
-export const {addFavItem, removeFavItem, clearAllFavItem}=favoriteSlice.actions;
+export const {addFavItem, removeFavItem, clearAllFavItems}=favoriteSlice.actions;
 export default favoriteSlice.reducer;

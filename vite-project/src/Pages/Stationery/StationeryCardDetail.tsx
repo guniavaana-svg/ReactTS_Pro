@@ -11,7 +11,8 @@ import * as Yup from 'yup';
 import { useParams } from "react-router";
 import { API_URL } from "../../../config.ts";
 import { useStateDispatch, useStateSelector } from "../../state/hooks.ts";
-import { addFavItem, removeFavItem } from "../../state/favorite/favoriteSlice.ts";
+import { addFavItem, removeFavItem } from "../../state/StateSlices/favoriteSlice.ts";
+import {addItemToCart,removeItemFromCart,clearAllCartItems} from "../../state/StateSlices/cartSlice.ts";
 import type { RootState } from "../../state/store.ts";
 // import  { FavoriteContext, useFavorite } from "../../FavoriteContext.tsx";
 function StationeryCardDetail(){
@@ -102,7 +103,7 @@ function StationeryCardDetail(){
                             <Field type="number" placeholder="" className="ml-auto inputBtn text-center" name="quantity" min="1" max="999"/>
                             <ErrorMessage name="quantity" component="span" className="error" />
                         </div>
-                        <button type="submit" className="btn bg-btnLight dark:bg-btnDark text-light2 ">
+                        <button onClick={()=>{dispatch(addItemToCart(Number(id)))}} type="submit" className="btn bg-btnLight dark:bg-btnDark text-light2 ">
                             <IoCartOutline className="w-[20px] h-[20px]"/>
                             <span className="btnText py-2">კალათაში დამატება</span>
                         </button>

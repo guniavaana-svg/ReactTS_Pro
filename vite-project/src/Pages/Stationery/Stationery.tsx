@@ -8,7 +8,7 @@ import { CiHeart } from "react-icons/ci";
 import { useParams } from "react-router";
 import type { RootState } from "../../state/store.ts";
 import { useStateSelector, useStateDispatch } from "../../state/hooks.ts";
-import {addFavItem, removeFavItem} from "../../state/favorite/favoriteSlice.ts";
+import {addFavItem, removeFavItem} from "../../state/StateSlices/favoriteSlice.ts";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 

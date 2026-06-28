@@ -1,7 +1,7 @@
 import type { RootState } from "../state/store.ts";
 import { CiHeart } from "react-icons/ci";
 import { useStateSelector, useStateDispatch } from "../state/hooks.ts";
-import {addFavItem, removeFavItem, clearAllFavItem} from "../state/favorite/favoriteSlice.ts"
+import {addFavItem, removeFavItem, clearAllFavItems} from "../state/StateSlices/favoriteSlice.ts"
 import { useEffect, useState } from "react";
 import { DiVim } from "react-icons/di";
 import { FaTimes } from "react-icons/fa";
@@ -53,7 +53,7 @@ function Favorite(){
                          </div>))
                     } 
                 </div>
-                <button className="leading-none flex items-center p-3 h-[20px] text-btnLight bg-light2 rounded-lg ml-auto" onClick={()=>{dispatch(clearAllFavItem()); setFavItemData([])}}><span className="translate-y-[2px] font-mtavruli ">ყველას წაშლა</span></button>
+                <button className="leading-none flex items-center p-3 h-[20px] text-btnLight bg-light2 rounded-lg ml-auto" onClick={()=>{dispatch(clearAllFavItems()); setFavItemData([])}}><span className="translate-y-[2px] font-mtavruli ">ყველას წაშლა</span></button>
             </div>
         </div>
         }
