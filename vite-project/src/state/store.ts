@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import favoriteReducer from "./StateSlices/favoriteSlice";
-import cartReducer from "./StateSlices/CartSlice";
+import cartReducer from "./StateSlices/cartSlice";
 export const store=configureStore({
     reducer:{
         //აქ ვწერთ სხვადასხვა slice ანუ reducers

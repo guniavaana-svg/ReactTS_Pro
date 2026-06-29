@@ -6,7 +6,7 @@ export interface StationeryDataType{
   subcategory?: string;
   brand?: string;
   sku?: string;
-  price?: number;
+  price: number;
   currency?: string;
   discountPercentage?: number;
   rating?: number;

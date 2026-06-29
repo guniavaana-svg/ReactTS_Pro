@@ -1,7 +1,12 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 
 interface CartStateType{
-    CartItemsIdList:number[]
+    CartItemsIdList:PayloadActionType[];
+}
+type PayloadActionType={
+    id:number;
+    quantity:number;
+    price:number;
 }
 const CartItemsId=localStorage.getItem("CartItemsId")
 //default value
@@ -15,16 +20,17 @@ const cartSlice=createSlice({
 //reduser
     reducers:{
 //action
-        addItemToCart:(state,action:PayloadAction<number>)=>{
-            if(state.CartItemsIdList.includes(action.payload)===false){
-                state.CartItemsIdList.push(action.payload);
+        addItemToCart:(state,action:PayloadAction<PayloadActionType>)=>{
+            const {id, quantity, price}=action.payload;
+            if(state.CartItemsIdList.some(item=>item.id===id)===false){
+                state.CartItemsIdList.push({id, quantity, price});
                 localStorage.setItem("CartItemsId",JSON.stringify(state.CartItemsIdList))
-                console.log(localStorage.getItem("CartItemsId"))
             }
         },
-        removeItemFromCart:(state, action:PayloadAction<number>)=>{
-            if(state.CartItemsIdList.includes(action.payload)===true && state.CartItemsIdList.indexOf(action.payload)!=-1){
-                const deleteIdIndex:number=state.CartItemsIdList.indexOf(action.payload)
+        removeItemFromCart:(state, action:PayloadAction<PayloadActionType>)=>{
+            const {id, quantity}=action.payload;
+            if(state.CartItemsIdList.some(item=>item.id==id)===true && state.CartItemsIdList.findIndex(item=>item.id==id)!=-1){
+                const deleteIdIndex:number=state.CartItemsIdList.findIndex(item=>item.id)
                 state.CartItemsIdList.splice(deleteIdIndex,1)
                 localStorage.setItem("CartItemsId",JSON.stringify(state.CartItemsIdList))
             }
@@ -35,5 +41,5 @@ const cartSlice=createSlice({
         }
     }
 })
-export const{addItemToCart, removeItemFromCart,clearAllCartItems}=cartSlice.actions;
+export const{addItemToCart, removeItemFromCart, clearAllCartItems}=cartSlice.actions;
 export default cartSlice.reducer;

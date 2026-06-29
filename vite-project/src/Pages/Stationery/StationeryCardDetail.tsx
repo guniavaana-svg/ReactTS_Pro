@@ -12,7 +12,7 @@ import { useParams } from "react-router";
 import { API_URL } from "../../../config.ts";
 import { useStateDispatch, useStateSelector } from "../../state/hooks.ts";
 import { addFavItem, removeFavItem } from "../../state/StateSlices/favoriteSlice.ts";
-import {addItemToCart,removeItemFromCart,clearAllCartItems} from "../../state/StateSlices/cartSlice.ts";
+import {addItemToCart} from "../../state/StateSlices/cartSlice.ts";
 import type { RootState } from "../../state/store.ts";
 // import  { FavoriteContext, useFavorite } from "../../FavoriteContext.tsx";
 function StationeryCardDetail(){
@@ -32,6 +32,7 @@ function StationeryCardDetail(){
             const response = await fetch(`${API_URL}/stationery/${id}`);
             const data:StationeryDataType = await response.json();
             setStationeryData(data);
+           
         }
     getStationeryData();
   }, []);
@@ -48,7 +49,7 @@ function StationeryCardDetail(){
   })
     function addToChart(values:{quantity:string}) {
         const productQuantity:number=Number(values.quantity);
-        console.log(productQuantity)
+        dispatch(addItemToCart({id:Number(id), quantity:productQuantity, price:stationeryData?.price||0}));
     }
 ///////////////////////////////////////////////////////////
     return(
@@ -99,20 +100,20 @@ function StationeryCardDetail(){
                }} validationSchema={validate} onSubmit={addToChart}>
                     <Form  className="flex flex-col gap-3">
                         <div className="btn justify-start bg-light2">
-                            <label className="btnText">რაოდენობა</label>
+                            <label className="btnText  mr-auto">რაოდენობა</label>
                             <Field type="number" placeholder="" className="ml-auto inputBtn text-center" name="quantity" min="1" max="999"/>
                             <ErrorMessage name="quantity" component="span" className="error" />
                         </div>
-                        <button onClick={()=>{dispatch(addItemToCart(Number(id)))}} type="submit" className="btn bg-btnLight dark:bg-btnDark text-light2 ">
+                        <button type="submit" className="btn bg-btnLight dark:bg-btnDark text-light2">
                             <IoCartOutline className="w-[20px] h-[20px]"/>
                             <span className="btnText py-2">კალათაში დამატება</span>
                         </button>
                     </Form>  
                </Formik>
                <div>
-                <h3 onClick={()=>{setSection(prev=>prev==="dec"?"":"dec")}}><span className="btnText">აღწერილობა</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="dec" && "rotate-180"} `}/></h3>
+                <h3 onClick={()=>{setSection(prev=>prev==="dec"?"":"dec")}}><span className="btnText  mr-auto">აღწერილობა</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="dec" && "rotate-180"} `}/></h3>
                 {section==="dec" && <p className="info">{stationeryData?.description}</p>}
-                <h3 onClick={()=>setSection(prev=>prev==="size"?"":"size")}><span className="btnText">ზომები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="size" && "rotate-180"} `}/></h3>
+                <h3 onClick={()=>setSection(prev=>prev==="size"?"":"size")}><span className="btnText  mr-auto">ზომები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="size" && "rotate-180"} `}/></h3>
                 {section==="size" && stationeryData?.specifications.map((item, index)=>(
                   <ul className="info" key={index}>
                         <li>ზომა: {item.size}</li>
@@ -123,7 +124,7 @@ function StationeryCardDetail(){
                         <li>წონა:{item.paperWeight}</li>
                     </ul>
                 ))}
-                <h3 onClick={()=>setSection(prev=>prev==="delivery"?"":"delivery")}><span className="btnText">მიწოდების პირობები და ვადები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="delivery" && "rotate-180"} `}/></h3>
+                <h3 onClick={()=>setSection(prev=>prev==="delivery"?"":"delivery")}><span className="btnText  mr-auto">მიწოდების პირობები და ვადები</span> <AiOutlineDown  className={`w-[20px] h-[20px] ${section==="delivery" && "rotate-180"} `}/></h3>
                 {section==="delivery" && <p className="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id deserunt voluptates fuga explicabo, magnam illum recusandae rem beatae deleniti, laudantium labore, minima vel enim! Veniam, ea voluptatibus. Sequi, error perferendis.</p>}
                </div>
             </div>
